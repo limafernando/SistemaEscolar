@@ -6,17 +6,20 @@ public class SistemaE{
 
 		Scanner entrada = new Scanner(System.in);
 
+		boolean done = false; //aux para o while
+		boolean aluno = false; //aux para verificar se o aluno informado existe no sistema
+	
 		String opcao = "";
 
-		Aluno alunos[] = new Aluno[20];
+		Aluno alunos[] = new Aluno[2000];
 		int contA = 0; //contador para o array alunos
 		String buscarA = ""; //String aux para fazer busca de alunos
 
-		Prof professores[] = new Prof[2];
+		Prof professores[] = new Prof[200];
 		int contP = 0; //contador para o array alunos
 		String buscarP = ""; //String aux para fazer busca de professores
 
-		Turma turmas[] = new Turma[1];
+		Turma turmas[] = new Turma[50];
 		int contT = 0; //contador para o array alunos
 		String buscarT = ""; //String aux para fazer busca de turmas
 
@@ -34,13 +37,13 @@ public class SistemaE{
 		}
 		//Fim da instanciação
 
-		//while(true){
+		while(!done){
 		
 			System.out.println("\n1 - Alunos");
 			System.out.println("2 - Professores");
 			System.out.println("3 - Turmas");
 			System.out.println("4 - Funcionarios");
-			//System.out.println("0 - Encerrar programa");
+			System.out.println("0 - Encerrar programa");
 
 			System.out.print("\nInforme a opcao desejada: ");
 			opcao = entrada.next();
@@ -48,10 +51,10 @@ public class SistemaE{
 			switch (opcao){
 				case "1":
 					System.out.println("\n1 - Cadastrar aluno");
-					System.out.println("2 - ALterar dados do aluno"); //buscar pelo nome
+					System.out.println("2 - Alterar dados do aluno"); //buscar pelo nome
 					System.out.println("3 - Remover aluno"); //buscar pelo nome
 					System.out.println("4 - Consultar aluno"); //boletim / buscar pelo nome
-					System.out.println("5 - Registra nota do aluno"); //buscar pelo nome
+					System.out.println("5 - Registrar notas do aluno"); //buscar pelo nome
 
 					System.out.print("\nInforme a opcao desejada: ");
 					opcao = entrada.next();
@@ -79,7 +82,7 @@ public class SistemaE{
 
 							entrada.nextLine(); //LIMPAR BUFFER DX SACANNER CHAMADO ENTRADA, MORAL, SE N DA RUIM
 							
-							System.out.print("\nInforme o telefone: ");
+							/*System.out.print("\nInforme o telefone: ");
 							alunos[contA].setTelefone(entrada.next());
 
 							entrada.nextLine(); //LIMPAR BUFFER DX SACANNER CHAMADO ENTRADA, MORAL, SE N DA RUIM
@@ -114,7 +117,9 @@ public class SistemaE{
 
 							entrada.nextLine(); //LIMPAR BUFFER DX SACANNER CHAMADO ENTRADA, MORAL, SE N DA RUIM
 
-							//criar e utilizar um metodo de ordenação no array alunos
+							//criar e utilizar um metodo de ordenação no array alunos*/
+
+							System.out.println("\nAluno cadastrado com sucesso!");
 
 							contA++;
 
@@ -126,7 +131,74 @@ public class SistemaE{
 							System.out.print("\nInforme o nome do aluno: ");
 							buscarA = entrada.nextLine();
 
-							//criar um metodo com algoritmo de busca
+							aluno = false;
+							for(int i = 0; i < alunos.length; i++){
+								if(buscarA.equals(alunos[i].getNome())){
+
+									aluno = true;
+							
+									System.out.print("\nInforme o nome: ");
+									alunos[i].setNome(entrada.nextLine());
+
+									System.out.print("\nInforme o cpf: ");
+									alunos[i].setCpf(entrada.next());
+
+									entrada.nextLine(); //LIMPAR BUFFER DX SACANNER CHAMADO ENTRADA, MORAL, SE N DA RUIM
+
+									System.out.print("\nInforme o rg: ");
+									alunos[i].setRg(entrada.next());
+
+									entrada.nextLine(); //LIMPAR BUFFER DX SACANNER CHAMADO ENTRADA, MORAL, SE N DA RUIM
+									
+									System.out.print("\nInforme o matricula: ") ;
+									alunos[i].setMatricula(entrada.next());
+
+									entrada.nextLine(); //LIMPAR BUFFER DX SACANNER CHAMADO ENTRADA, MORAL, SE N DA RUIM
+									
+									/*System.out.print("\nInforme o telefone: ");
+									alunos[i].setTelefone(entrada.next());
+
+									entrada.nextLine(); //LIMPAR BUFFER DX SACANNER CHAMADO ENTRADA, MORAL, SE N DA RUIM
+									
+									System.out.print("\nInforme o email: ");
+									alunos[i].setEmail(entrada.next());
+
+									entrada.nextLine(); //LIMPAR BUFFER DX SACANNER CHAMADO ENTRADA, MORAL, SE N DA RUIM
+									
+									System.out.print("\nInforme o tipo sanguineo: ");
+									alunos[i].setTipoSanguineo(entrada.next());
+
+									entrada.nextLine(); //LIMPAR BUFFER DX SACANNER CHAMADO ENTRADA, MORAL, SE N DA RUIM
+									
+									System.out.print("\nInforme a turma: ");
+									alunos[i].setTurmaDoAluno(entrada.next());
+
+									entrada.nextLine(); //LIMPAR BUFFER DX SACANNER CHAMADO ENTRADA, MORAL, SE N DA RUIM
+
+									System.out.print("\nInforme o nome do responsavel: ");
+									alunos[i].setNomeResponsavel(entrada.next());
+
+									entrada.nextLine(); //LIMPAR BUFFER DX SACANNER CHAMADO ENTRADA, MORAL, SE N DA RUIM
+									
+									System.out.print("\nInforme o telefone do responsavel: ");
+									alunos[i].setTelefoneResponsavel(entrada.next());
+
+									entrada.nextLine(); //LIMPAR BUFFER DX SACANNER CHAMADO ENTRADA, MORAL, SE N DA RUIM
+									
+									System.out.print("\nInforme a mensalidade: ");
+									alunos[i].setMensalidade(entrada.nextDouble());
+
+									entrada.nextLine(); //LIMPAR BUFFER DX SACANNER CHAMADO ENTRADA, MORAL, SE N DA RUIM*/
+
+									System.out.println("\nDados alterados com sucesso!");
+								}
+							}
+
+							if(!aluno){
+								System.out.println("\nAluno nao existente!");
+							}
+
+							break;
 
 						case "3":
 							entrada.nextLine(); //LIMPAR BUFFER DX SACANNER CHAMADO ENTRADA, MORAL, SE N DA RUIM
@@ -146,9 +218,17 @@ public class SistemaE{
 							System.out.print("\nInforme o nome do aluno: ");
 							buscarA = entrada.nextLine();
 
-							//utilizar o metodo de busca
+							aluno = false;
+							for(int i = 0; i < alunos.length; i++){
+								if(buscarA.equals(alunos[i].getNome())){
+									aluno = true;
+									System.out.print(alunos[i]);
+								}
+							}
 
-							//System.out.print(/*retono do metodo de busca*/);
+							if(!aluno){
+								System.out.println("\nAluno nao existente!");
+							}
 
 							break;
 
@@ -165,49 +245,25 @@ public class SistemaE{
 
 
 				/*case "2":
-					//funcao professor
+					//professores
 					break;
 
 				case "3":
-					System.out.println("\n1 - Cadastrar turma");
-					System.out.println("2 - Registrar aluno na turma"); //buscar pelo nome
-					System.out.println("3 - Remover turma"); //buscar pelo nome
-					System.out.println("4 - Consultar aluno"); //boletim / buscar pelo nome
-					System.out.println("5 - Registrar professor na turma"); //buscar pelo nome
-
-					System.out.print("\nInforme a opcao desejada: ");
-					opcao = entrada.next();
-
-					switch (opcao){
-						case "1":
-							System.out.print("\nInforme o nome da turma: ");
-							turma.setId(entrada.next());
-
-							entrada.nextLine9();
-
-							while(true){
-								System.out.println("\n1 - Registrar aluno na turma");
-								System.out.println("2 - Registrar professor na turma");
-								System.out.println("3 - Sair");
-
-								System.out.print("\nInforme a opcao desejada: ");
-								opcao = entrada.next();
-
-							}
-
-							break;
+					//turmas
 					break;
 
 				case "4":
-					//funcao funcionario
+					//funcionarios
 					break;*/
 
 				case "0":
+					done = true;
 					break;
 
 				default:
+					System.out.println("Opcao invalida!");
 					break;
 			}
-		//}//fecha o while
+		}//fecha o while
 	}//fecha o main
 }//fecha a classe
