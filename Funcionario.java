@@ -32,6 +32,6 @@ public class Funcionario extends Pessoa{
 	}
 	
 	public String toString(){
-		System.out.println("Nome: " + nome + "\nCargo: " + cargo + "\nSalário: " + salario);
+		System.out.println(super.toString() + "\nCargo: " + cargo + "\nSalário: " + salario);
 	}
 }
