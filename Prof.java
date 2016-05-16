@@ -12,4 +12,11 @@ public class Prof extends Funcionario{
 			turmasDoProf[i] = "";
 		}
 	}
+	
+	public void setMatricula(String matricula){
+		this.matricula = matricula;
+	}
+	public String getMatricula(){
+		return this.matricula;
+	}
 }
