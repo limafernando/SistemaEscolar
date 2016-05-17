@@ -329,7 +329,7 @@ public class SistemaE{
 							break;
 							
 						default:
-							System.out.println("Opcao invalida!");
+							System.out.print("\nOpcao invalida!");
 							break;
 					}
 					
