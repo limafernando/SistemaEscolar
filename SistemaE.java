@@ -8,6 +8,7 @@ public class SistemaE{
 
 		boolean done = false; //aux para o while
 		boolean aluno = false; //aux para verificar se o aluno informado existe no sistema
+		boolean professor = false; //aux para verificar se o professor informado existe no sistema
 	
 		String opcao = "";
 
@@ -242,19 +243,107 @@ public class SistemaE{
 					}
 
 					break;
+					
+					
+				case "2":   //professores
+				
+					System.out.println("\n1 - Cadastrar professor");
+					System.out.println("2 - Alterar dados do professor"); //buscar pelo nome
+					System.out.println("3 - Remover professor"); //buscar pelo nome
+					System.out.println("4 - Consultar professor"); //boletim / buscar pelo nome
+					System.out.println("0 - Voltar ao menu anterior"); //buscar pelo nome
 
-
-				/*case "2":
-					//professores
+					System.out.print("\nInforme a opção desejada: ");
+					opcao = entrada.next();
+					
+					switch (opcao){
+						
+						case "1":
+						
+							entrada.nextLine(); // Limpando o Buffer
+							
+							System.out.print("\n Informe o nome: ");
+							professores[contP].setNome(entrada.nextLine);
+							
+							entrada.nextLine(); // Limpando o Buffer
+							
+							System.out.print("\nInforme o cpf: ");
+							professores[contP].setCpf(entrada.nextLine());
+							
+							entrada.nextLine(); // Limpando o Buffer
+							
+							System.out.print("\nInforme o rg: ");
+							professores[contP].setRg(entrada.nextLine());
+							
+							entrada.nextLine(); // Limpando o Buffer
+							
+							System.out.print("\nInforme a matrícula: ") ;
+							professores[contP].setMatricula(entrada.nextLine());
+							
+							entrada.nextLine(); // Limpando o Buffer
+							
+							System.out.print("\nInforme o telefone: ");
+							professores[contP].setTelefone(entrada.nextLine());
+							
+							entrada.nextLine(); // Limpando o Buffer
+							
+							System.out.print("\nInforme o email: ");
+							professores[contP].setEmail(entrada.nextLine());
+							
+							entrada.nextLine(); // Limpando o Buffer
+							
+							System.out.print("\nInforme o tipo sanguíneo: ");
+							professores[contP].setTipoSanguineo(entrada.nextLine());
+							
+							entrada.nextDouble(); // Limpando o Buffer
+							
+							System.out.print("\nInforme o salário: ");
+							professores[contP].setSalario(entrada.nextDouble());
+							
+							entrada.nextInt(); // Limpando o Buffer
+							
+							System.out.print("\nQuantas turmas tem esse professor?")
+							for(int i = 0; i < entrada.nextInt(); i++);{
+								entrada.nextLine(); //Limpando o Buffer
+								System.out.print("Informe a ID da turma " + (i+1) + ": ");
+								professores[contP].setTurmasDoProf(entrada.nextLine()); 
+							}
+							
+							contP++;
+							
+							break;
+							
+						case "2":
+							
+							break;
+							
+						case "3":
+							
+							break;
+							
+						case "4":
+							
+							break;
+							
+						case "0":
+							break;
+							
+						default:
+							System.out.println("Opcao invalida!");
+							break;
+					}
+					
 					break;
 
+				/*
 				case "3":
-					//turmas
+					turmas
 					break;
 
 				case "4":
-					//funcionarios
-					break;*/
+					funcionarios
+					break;
+				*/
 
 				case "0":
 					done = true;
