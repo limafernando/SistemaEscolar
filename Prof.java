@@ -1,6 +1,5 @@
 public class Prof extends Funcionario{
 
-	protected String matricula;
 	protected String turmasDoProf[] = new String[10];
 	
 	private int aux1 = 0; //varíavel para auxiliar o Set de Turmas
@@ -16,13 +15,6 @@ public class Prof extends Funcionario{
 		}
 	}
 	
-	public void setMatricula(String matricula){
-		this.matricula = matricula;
-	}
-	public String getMatricula(){
-		return this.matricula;
-	}
-	
 	public void setTurmasDoProf(String turma){
 		turmasDoProf[aux1] = turma;
 		aux1++;
@@ -35,6 +27,6 @@ public class Prof extends Funcionario{
 	}
 	
 	public String toString(){
-		return super.toString() + "\nMatricula: " + matricula + "\nTurmas do Professor: " + getTurmasDoProf();
+		return super.toString() + "\nTurmas do Professor: " + getTurmasDoProf();
 	}
 }
