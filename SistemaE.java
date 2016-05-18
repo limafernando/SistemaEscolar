@@ -258,7 +258,7 @@ public class SistemaE{
 					
 					switch (opcao){
 						
-						case "1":
+						case "1": // Cadastramento
 						
 							entrada.nextLine(); // Limpando o Buffer
 							
@@ -313,7 +313,7 @@ public class SistemaE{
 							
 							break;
 							
-						case "2":
+						case "2": // Alterar
 							entrada.nextLine(); // Limpando o Buffer
 							
 							System.out.print("\nInforme o nome do professor que deseja alterar: ");
@@ -384,15 +384,37 @@ public class SistemaE{
 							
 							break;
 							
-						case "3":
+						case "3": // Remover
+							entrada.nextLine(); // Limpando o Buffer
+							
+							System.out.print("\Informe o nome do professor para remoção: ");
+							buscaP = entrada.nextLine();
+							
+							
 							
 							break;
 							
-						case "4":
+						case "4": //Consultar
+							entrada.nextLine(); // Limpando o Buffer
+							
+							System.out.print("\nInforme o nome do professor: ");
+							buscarP = entrada.nextLine();
+
+							professor = false;
+							for(int i = 0; i < professores.length; i++){
+								if(buscarA.equals(professores[i].getNome())){
+									professor = true;
+									System.out.print(professores[i] + "\n");
+								}
+							}
+
+							if(!aluno){
+								System.out.println("\nProfessor não existente.");
+							}
 							
 							break;
 							
-						case "0":
+						case "0": // Voltar
 							break;
 							
 						default:
