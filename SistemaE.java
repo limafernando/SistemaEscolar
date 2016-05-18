@@ -9,6 +9,7 @@ public class SistemaE{
 		boolean done = false; //aux para o while
 		boolean aluno = false; //aux para verificar se o aluno informado existe no sistema
 		boolean professor = false; //aux para verificar se o professor informado existe no sistema
+		String matriculaB = ""; //aux para busca de aluno/professor/funcionario
 	
 		String opcao = "";
 
