@@ -14,6 +14,10 @@ public class Aluno extends Pessoa{
 		mensalidade = 0.0;
 		turmaDoAluno = "";
 	}
+	
+	public String getTurmadoAluno(){
+		return turmaDoAluno;
+	}
 
 	public void setTurmaDoAluno(String id){
 		turmaDoAluno = id;
