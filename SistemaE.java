@@ -376,7 +376,7 @@ public class SistemaE{
 							professor = false;
 							for(int i = 0 < professores.length; i++){
 								if(buscaP.equals(professores[i].getNome())){
-									aluno = true;
+									professor = true;
 									
 									entrada.nextLine(); // Limpando o Buffer
 							
@@ -444,6 +444,7 @@ public class SistemaE{
 							System.out.print("\Informe o nome do professor para remoção: ");
 							buscaP = entrada.nextLine();
 							
+							professor = false;
 							for(int i = 0; i < professores.length; i++){
 								if(buscarA.equals(professores[i].getNome())){
 									professor = true;
@@ -482,7 +483,7 @@ public class SistemaE{
 								}
 							}
 
-							if(!aluno){
+							if(!professor){
 								System.out.println("\nProfessor não existente.");
 							}
 							
