@@ -356,52 +356,52 @@ public class SistemaE{
 									
 									entrada.nextLine(); // Limpando o Buffer
 							
-								System.out.print("\n Informe o nome: ");
-								professores[contP].setNome(entrada.nextLine);
+									System.out.print("\n Informe o nome: ");
+									professores[contP].setNome(entrada.nextLine);
 							
-								entrada.nextLine(); // Limpando o Buffer
+									entrada.nextLine(); // Limpando o Buffer
+								
+									System.out.print("\nInforme o cpf: ");
+									professores[contP].setCpf(entrada.nextLine());
 							
-								System.out.print("\nInforme o cpf: ");
-								professores[contP].setCpf(entrada.nextLine());
+									entrada.nextLine(); // Limpando o Buffer
 							
-								entrada.nextLine(); // Limpando o Buffer
+									System.out.print("\nInforme o rg: ");
+									professores[contP].setRg(entrada.nextLine());
 							
-								System.out.print("\nInforme o rg: ");
-								professores[contP].setRg(entrada.nextLine());
+									entrada.nextLine(); // Limpando o Buffer
 							
-								entrada.nextLine(); // Limpando o Buffer
+									System.out.print("\nInforme a matrícula: ") ;
+									professores[contP].setMatricula(entrada.nextLine());
 							
-								System.out.print("\nInforme a matrícula: ") ;
-								professores[contP].setMatricula(entrada.nextLine());
+									entrada.nextLine(); // Limpando o Buffer
 							
-								entrada.nextLine(); // Limpando o Buffer
+									System.out.print("\nInforme o telefone: ");
+									professores[contP].setTelefone(entrada.nextLine());
 							
-								System.out.print("\nInforme o telefone: ");
-								professores[contP].setTelefone(entrada.nextLine());
+									entrada.nextLine(); // Limpando o Buffer
 							
-								entrada.nextLine(); // Limpando o Buffer
+									System.out.print("\nInforme o email: ");
+									professores[contP].setEmail(entrada.nextLine());
 							
-								System.out.print("\nInforme o email: ");
-								professores[contP].setEmail(entrada.nextLine());
+									entrada.nextLine(); // Limpando o Buffer
 							
-								entrada.nextLine(); // Limpando o Buffer
+									System.out.print("\nInforme o tipo sanguíneo: ");
+									professores[contP].setTipoSanguineo(entrada.nextLine());
 							
-								System.out.print("\nInforme o tipo sanguíneo: ");
-								professores[contP].setTipoSanguineo(entrada.nextLine());
+									entrada.nextDouble(); // Limpando o Buffer
 							
-								entrada.nextDouble(); // Limpando o Buffer
+									System.out.print("\nInforme o salário: ");
+									professores[contP].setSalario(entrada.nextDouble());
 							
-								System.out.print("\nInforme o salário: ");
-								professores[contP].setSalario(entrada.nextDouble());
+									entrada.nextInt(); // Limpando o Buffer
 							
-								entrada.nextInt(); // Limpando o Buffer
-							
-								System.out.print("\nQuantas turmas tem esse professor?")
-								for(int i = 0; i < entrada.nextInt(); i++);{
-									entrada.nextLine(); //Limpando o Buffer
-									System.out.print("Informe a ID da turma " + (i+1) + ": ");
-									professores[contP].setTurmasDoProf(entrada.nextLine()); 
-								}
+									System.out.print("\nQuantas turmas tem esse professor?")
+									for(int i = 0; i < entrada.nextInt(); i++);{
+										entrada.nextLine(); //Limpando o Buffer
+										System.out.print("Informe a ID da turma " + (i+1) + ": ");
+										professores[contP].setTurmasDoProf(entrada.nextLine()); 
+									}
 									
 									
 									System.out.println("\n Dados alterados com sucesso.");
@@ -420,7 +420,27 @@ public class SistemaE{
 							System.out.print("\Informe o nome do professor para remoção: ");
 							buscaP = entrada.nextLine();
 							
+							for(int i = 0; i < professores.length; i++){
+								if(buscarA.equals(professores[i].getNome())){
+									professor = true;
+									
+									for(int j = i; j < professores.length; j++){
+										if(j == (professores.length - 1)){
+											professores[j] = new Prof();
+										}else{
+											professores[j] = professores[j+1];
+										}
+									}
+								
+									System.out.println("\nO professor foi removido com sucesso");
+								
+									--contP;
+								}
+							}
 							
+							if(!professor){
+								System.out.println("\nProfessor não existente.");
+							}
 							
 							break;
 							
