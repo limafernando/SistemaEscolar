@@ -56,6 +56,8 @@ public class SistemaE{
 					System.out.println("3 - Remover aluno"); //buscar pelo nome
 					System.out.println("4 - Consultar aluno"); //boletim / buscar pelo nome
 					System.out.println("5 - Registrar notas do aluno"); //buscar pelo nome
+					System.out.println("6 - Gerar declaraçao de vinculo");
+					System.out.println("0 - Voltar");
 
 					System.out.print("\nInforme a opcao desejada: ");
 					opcao = entrada.next();
@@ -207,9 +209,31 @@ public class SistemaE{
 							System.out.print("\nInforme o nome do aluno: ");
 							buscarA = entrada.nextLine();
 
-							//utilizar o metodo de busca
-							//remover o elemento desejado do array alunos
-							//reordenar
+							aluno = false;
+							for(int i = 0; i < alunos.length; i++){
+								if(buscarA.equals(alunos[i].getNome()) && matriculaB.equals(alunos[i].getMatricula())){
+									aluno = true;
+									
+									for(int j = 0; j < alunos.length; j++){
+										
+										if(j == (alunos.length - 1)){
+											alunos[j] = new Aluno();
+										}
+										
+										else{
+											alunos[j] = alunos[j+1];
+										}
+									}
+
+									System.out.println("\nAluno removido com sucesso!");
+
+									--contA; //contador de alunos vai ser decrementado
+								}
+							}
+
+							if(!aluno){
+								System.out.println("\nAluno nao existente!");
+							}
 
 							break;
 
@@ -236,6 +260,12 @@ public class SistemaE{
 						case "5":
 							entrada.nextLine(); //LIMPAR BUFFER DX SACANNER CHAMADO ENTRADA, MORAL, SE N DA RUIM
 
+							break;
+							
+						case "6":
+							break;
+
+						case "0":
 							break;
 
 						default:
