@@ -57,7 +57,7 @@ public class SistemaE{
 					System.out.println("3 - Remover aluno"); //buscar pelo nome
 					System.out.println("4 - Consultar aluno"); //boletim / buscar pelo nome
 					System.out.println("5 - Registrar notas do aluno"); //buscar pelo nome
-					System.out.println("6 - Gerar declaraçao de vinculo");
+					System.out.println("6 - Gerar declaracao de vinculo");
 					System.out.println("0 - Voltar");
 
 					System.out.print("\nInforme a opcao desejada: ");
