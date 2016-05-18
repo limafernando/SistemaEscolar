@@ -248,10 +248,10 @@ public class SistemaE{
 				case "2":   //professores
 				
 					System.out.println("\n1 - Cadastrar professor");
-					System.out.println("2 - Alterar dados do professor"); //buscar pelo nome
-					System.out.println("3 - Remover professor"); //buscar pelo nome
-					System.out.println("4 - Consultar professor"); //boletim / buscar pelo nome
-					System.out.println("0 - Voltar ao menu anterior"); //buscar pelo nome
+					System.out.println("2 - Alterar dados do professor");
+					System.out.println("3 - Remover professor");
+					System.out.println("4 - Consultar professor");
+					System.out.println("0 - Voltar ao menu anterior");
 
 					System.out.print("\nInforme a opção desejada: ");
 					opcao = entrada.next();
@@ -314,6 +314,73 @@ public class SistemaE{
 							break;
 							
 						case "2":
+							entrada.nextLine(); // Limpando o Buffer
+							
+							System.out.print("\nInforme o nome do professor que deseja alterar: ");
+							buscarP = entrada.nextLine();
+							
+							professor = false;
+							for(int i = 0 < professores.length; i++){
+								if(buscaP.equals(professores[i].getNome())){
+									aluno = true;
+									
+									entrada.nextLine(); // Limpando o Buffer
+							
+								System.out.print("\n Informe o nome: ");
+								professores[contP].setNome(entrada.nextLine);
+							
+								entrada.nextLine(); // Limpando o Buffer
+							
+								System.out.print("\nInforme o cpf: ");
+								professores[contP].setCpf(entrada.nextLine());
+							
+								entrada.nextLine(); // Limpando o Buffer
+							
+								System.out.print("\nInforme o rg: ");
+								professores[contP].setRg(entrada.nextLine());
+							
+								entrada.nextLine(); // Limpando o Buffer
+							
+								System.out.print("\nInforme a matrícula: ") ;
+								professores[contP].setMatricula(entrada.nextLine());
+							
+								entrada.nextLine(); // Limpando o Buffer
+							
+								System.out.print("\nInforme o telefone: ");
+								professores[contP].setTelefone(entrada.nextLine());
+							
+								entrada.nextLine(); // Limpando o Buffer
+							
+								System.out.print("\nInforme o email: ");
+								professores[contP].setEmail(entrada.nextLine());
+							
+								entrada.nextLine(); // Limpando o Buffer
+							
+								System.out.print("\nInforme o tipo sanguíneo: ");
+								professores[contP].setTipoSanguineo(entrada.nextLine());
+							
+								entrada.nextDouble(); // Limpando o Buffer
+							
+								System.out.print("\nInforme o salário: ");
+								professores[contP].setSalario(entrada.nextDouble());
+							
+								entrada.nextInt(); // Limpando o Buffer
+							
+								System.out.print("\nQuantas turmas tem esse professor?")
+								for(int i = 0; i < entrada.nextInt(); i++);{
+									entrada.nextLine(); //Limpando o Buffer
+									System.out.print("Informe a ID da turma " + (i+1) + ": ");
+									professores[contP].setTurmasDoProf(entrada.nextLine()); 
+								}
+									
+									
+									System.out.println("\n Dados alterados com sucesso.");
+								}
+							}
+							
+							if(!professor){
+								System.out.println("\n Professor informado não existente");
+							}
 							
 							break;
 							
