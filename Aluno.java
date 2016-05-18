@@ -1,6 +1,6 @@
 public class Aluno extends Pessoa{
 
-	protected String turmaDoAluno; //antes tinhamos uma intancia da classe Turma, mas não faz sentido ter uma instancia da class turma. Mesma coisa na classe Prof
+	protected String turmaDoAluno; //Antes tinhamos uma intancia da classe Turma, mas não faz sentido ter uma instancia da classe turma. Mesma coisa na classe Prof
 	protected String nomeResponsavel;
 	protected String telefoneResponsavel;
 	protected double mensalidade;
