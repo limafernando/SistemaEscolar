@@ -307,7 +307,7 @@ public class SistemaE{
 					System.out.println("4 - Consultar professor");
 					System.out.println("0 - Voltar ao menu anterior");
 
-					System.out.print("\nInforme a opÃ§Ã£o desejada: ");
+					System.out.print("\nInforme a opcao desejada: ");
 					opcao = entrada.next();
 					
 					switch (opcao){
@@ -331,7 +331,7 @@ public class SistemaE{
 							
 							entrada.nextLine(); // Limpando o Buffer
 							
-							System.out.print("\nInforme a matrÃ­cula: ") ;
+							System.out.print("\nInforme a matricula: ") ;
 							professores[contP].setMatricula(entrada.nextLine());
 							
 							entrada.nextLine(); // Limpando o Buffer
@@ -346,12 +346,12 @@ public class SistemaE{
 							
 							entrada.nextLine(); // Limpando o Buffer
 							
-							System.out.print("\nInforme o tipo sanguÃ­neo: ");
+							System.out.print("\nInforme o tipo sanguineo: ");
 							professores[contP].setTipoSanguineo(entrada.nextLine());
 							
 							entrada.nextDouble(); // Limpando o Buffer
 							
-							System.out.print("\nInforme o salÃ¡rio: ");
+							System.out.print("\nInforme o salario: ");
 							professores[contP].setSalario(entrada.nextDouble());
 							
 							entrada.nextInt(); // Limpando o Buffer
@@ -374,14 +374,14 @@ public class SistemaE{
 							buscarP = entrada.nextLine();
 							
 							professor = false;
-							for(int i = 0 < professores.length; i++){
-								if(buscaP.equals(professores[i].getNome())){
+							for(int i = 0; i < professores.length; i++){
+								if(buscarP.equals(professores[i].getNome())){
 									professor = true;
 									
 									entrada.nextLine(); // Limpando o Buffer
 							
 									System.out.print("\n Informe o nome: ");
-									professores[contP].setNome(entrada.nextLine);
+									professores[contP].setNome(entrada.nextLine());
 							
 									entrada.nextLine(); // Limpando o Buffer
 								
@@ -395,7 +395,7 @@ public class SistemaE{
 							
 									entrada.nextLine(); // Limpando o Buffer
 							
-									System.out.print("\nInforme a matrÃ­cula: ") ;
+									System.out.print("\nInforme a matricula: ") ;
 									professores[contP].setMatricula(entrada.nextLine());
 							
 									entrada.nextLine(); // Limpando o Buffer
@@ -410,20 +410,20 @@ public class SistemaE{
 							
 									entrada.nextLine(); // Limpando o Buffer
 							
-									System.out.print("\nInforme o tipo sanguÃ­neo: ");
+									System.out.print("\nInforme o tipo sanguineo: ");
 									professores[contP].setTipoSanguineo(entrada.nextLine());
 							
 									entrada.nextDouble(); // Limpando o Buffer
 							
-									System.out.print("\nInforme o salÃ¡rio: ");
+									System.out.print("\nInforme o salario: ");
 									professores[contP].setSalario(entrada.nextDouble());
 							
 									entrada.nextInt(); // Limpando o Buffer
 							
-									System.out.print("\nQuantas turmas tem esse professor?")
-									for(int i = 0; i < entrada.nextInt(); i++);{
+									System.out.print("\nQuantas turmas tem esse professor?");
+									for(int j = 0; j < entrada.nextInt(); j++);{
 										entrada.nextLine(); //Limpando o Buffer
-										System.out.print("Informe a ID da turma " + (i+1) + ": ");
+										System.out.print("Informe a ID da turma " + (j+1) + ": ");
 										professores[contP].setTurmasDoProf(entrada.nextLine()); 
 									}
 									
@@ -433,7 +433,7 @@ public class SistemaE{
 							}
 							
 							if(!professor){
-								System.out.println("\n Professor informado nÃ£o existente");
+								System.out.println("\n Professor informado nao existente");
 							}
 							
 							break;
@@ -441,8 +441,8 @@ public class SistemaE{
 						case "3": // Remover
 							entrada.nextLine(); // Limpando o Buffer
 							
-							System.out.print("\Informe o nome do professor para remoÃ§Ã£o: ");
-							buscaP = entrada.nextLine();
+							System.out.print("\nInforme o nome do professor para remocao: ");
+							buscarP = entrada.nextLine();
 							
 							professor = false;
 							for(int i = 0; i < professores.length; i++){
@@ -464,7 +464,7 @@ public class SistemaE{
 							}
 							
 							if(!professor){
-								System.out.println("\nProfessor nÃ£o existente.");
+								System.out.println("\nProfessor nao existente.");
 							}
 							
 							break;
@@ -484,7 +484,7 @@ public class SistemaE{
 							}
 
 							if(!professor){
-								System.out.println("\nProfessor nÃ£o existente.");
+								System.out.println("\nProfessor nao existente.");
 							}
 							
 							break;
