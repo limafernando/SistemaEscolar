@@ -25,7 +25,7 @@ public class SistemaE{
 		int contT = 0; //contador para o array alunos
 		String buscarT = ""; //String aux para fazer busca de turmas
 
-		//Instanciação dos objetos dos arrays alunos, professores e turmas
+		//InstanciaÃ§Ã£o dos objetos dos arrays alunos, professores e turmas
 		for(int i = 0; i < alunos.length; i++){
 			alunos[i] = new Aluno();
 		}
@@ -37,7 +37,7 @@ public class SistemaE{
 		for(int i = 0; i < turmas.length; i++){
 			turmas[i] = new Turma();
 		}
-		//Fim da instanciação
+		//Fim da instanciaÃ§Ã£o
 
 		while(!done){
 		
@@ -121,7 +121,7 @@ public class SistemaE{
 
 							entrada.nextLine(); //Limpando buffer
 
-							//criar e utilizar um metodo de ordenação no array alunos*/
+							//criar e utilizar um metodo de ordenaÃ§Ã£o no array alunos*/
 
 							System.out.println("\nAluno cadastrado com sucesso!");
 
@@ -228,8 +228,8 @@ public class SistemaE{
 									aluno = true;
 									
 									//Caso o aluno desejado seja encontrado, cada elemento do array alunos, a partir do elemento
-									//que se encontra do aluno desejado, vai receber o conteúdo do elemento a frente, exceto se
-									//o elemento for o último do array, neste caso, ele vai ser instanciado
+									//que se encontra do aluno desejado, vai receber o conteÃºdo do elemento a frente, exceto se
+									//o elemento for o Ãºltimo do array, neste caso, ele vai ser instanciado
 
 									for(int j = i; j < alunos.length; j++){
 										
@@ -269,7 +269,7 @@ public class SistemaE{
 								if(buscarA.equals(alunos[i].getNome()) && matriculaB.equals(alunos[i].getMatricula())){
 									
 									aluno = true;
-									System.out.print(alunos[i]); //Printa todas as informações do aluno em tela
+									System.out.print(alunos[i]); //Printa todas as informaÃ§Ãµes do aluno em tela
 
 								}
 							}
@@ -285,7 +285,7 @@ public class SistemaE{
 
 							break;
 							
-						case "6": //Gerar um documento de comprovação de matricula
+						case "6": //Gerar um documento de comprovaÃ§Ã£o de matricula
 							break;
 
 						case "0": //Voltar
@@ -307,7 +307,7 @@ public class SistemaE{
 					System.out.println("4 - Consultar professor");
 					System.out.println("0 - Voltar ao menu anterior");
 
-					System.out.print("\nInforme a opção desejada: ");
+					System.out.print("\nInforme a opÃ§Ã£o desejada: ");
 					opcao = entrada.next();
 					
 					switch (opcao){
@@ -317,7 +317,7 @@ public class SistemaE{
 							entrada.nextLine(); // Limpando o Buffer
 							
 							System.out.print("\n Informe o nome: ");
-							professores[contP].setNome(entrada.nextLine);
+							professores[contP].setNome(entrada.nextLine());
 							
 							entrada.nextLine(); // Limpando o Buffer
 							
@@ -331,7 +331,7 @@ public class SistemaE{
 							
 							entrada.nextLine(); // Limpando o Buffer
 							
-							System.out.print("\nInforme a matrícula: ") ;
+							System.out.print("\nInforme a matrÃ­cula: ") ;
 							professores[contP].setMatricula(entrada.nextLine());
 							
 							entrada.nextLine(); // Limpando o Buffer
@@ -346,17 +346,17 @@ public class SistemaE{
 							
 							entrada.nextLine(); // Limpando o Buffer
 							
-							System.out.print("\nInforme o tipo sanguíneo: ");
+							System.out.print("\nInforme o tipo sanguÃ­neo: ");
 							professores[contP].setTipoSanguineo(entrada.nextLine());
 							
 							entrada.nextDouble(); // Limpando o Buffer
 							
-							System.out.print("\nInforme o salário: ");
+							System.out.print("\nInforme o salÃ¡rio: ");
 							professores[contP].setSalario(entrada.nextDouble());
 							
 							entrada.nextInt(); // Limpando o Buffer
 							
-							System.out.print("\nQuantas turmas tem esse professor?")
+							System.out.print("\nQuantas turmas tem esse professor?");
 							for(int i = 0; i < entrada.nextInt(); i++);{
 								entrada.nextLine(); //Limpando o Buffer
 								System.out.print("Informe a ID da turma " + (i+1) + ": ");
@@ -395,7 +395,7 @@ public class SistemaE{
 							
 									entrada.nextLine(); // Limpando o Buffer
 							
-									System.out.print("\nInforme a matrícula: ") ;
+									System.out.print("\nInforme a matrÃ­cula: ") ;
 									professores[contP].setMatricula(entrada.nextLine());
 							
 									entrada.nextLine(); // Limpando o Buffer
@@ -410,12 +410,12 @@ public class SistemaE{
 							
 									entrada.nextLine(); // Limpando o Buffer
 							
-									System.out.print("\nInforme o tipo sanguíneo: ");
+									System.out.print("\nInforme o tipo sanguÃ­neo: ");
 									professores[contP].setTipoSanguineo(entrada.nextLine());
 							
 									entrada.nextDouble(); // Limpando o Buffer
 							
-									System.out.print("\nInforme o salário: ");
+									System.out.print("\nInforme o salÃ¡rio: ");
 									professores[contP].setSalario(entrada.nextDouble());
 							
 									entrada.nextInt(); // Limpando o Buffer
@@ -433,7 +433,7 @@ public class SistemaE{
 							}
 							
 							if(!professor){
-								System.out.println("\n Professor informado não existente");
+								System.out.println("\n Professor informado nÃ£o existente");
 							}
 							
 							break;
@@ -441,7 +441,7 @@ public class SistemaE{
 						case "3": // Remover
 							entrada.nextLine(); // Limpando o Buffer
 							
-							System.out.print("\Informe o nome do professor para remoção: ");
+							System.out.print("\Informe o nome do professor para remoÃ§Ã£o: ");
 							buscaP = entrada.nextLine();
 							
 							professor = false;
@@ -464,7 +464,7 @@ public class SistemaE{
 							}
 							
 							if(!professor){
-								System.out.println("\nProfessor não existente.");
+								System.out.println("\nProfessor nÃ£o existente.");
 							}
 							
 							break;
@@ -484,7 +484,7 @@ public class SistemaE{
 							}
 
 							if(!professor){
-								System.out.println("\nProfessor não existente.");
+								System.out.println("\nProfessor nÃ£o existente.");
 							}
 							
 							break;
@@ -499,15 +499,93 @@ public class SistemaE{
 					
 					break;
 
-				/*
 				case "3":
-					turmas
-					break;
+					System.out.println("\n1 - Cadastrar turma");
+					System.out.println("2 - Registrar aluno na turma"); 
+					System.out.println("3 - Registrar professor na turma"); 
+					System.out.println("4 - Consultar turma"); 
 
-				case "4":
+
+					System.out.print("\nInforme a opcao desejada: ");
+					opcao = entrada.next();
+
+					switch (opcao){
+						case "1":
+							entrada.nextLine();
+							System.out.print("\nInforme o nome da turma: ");
+							turmas[contT].setId(entrada.next());
+							contT++;
+							break;
+										
+						case "2":
+							entrada.nextLine();
+							System.out.print("\nInforme o nome da turma: ");
+							buscarT = entrada.nextLine();
+							for(int j = 0; j < turmas.length; j++){
+								if(buscarT.equals(turmas[j].getId())){
+									for(int i = 0; i < alunos.length; i++){
+										int k = 0;
+										if(alunos[i].getTurmadoAluno().equals(turmas[j].getId())){
+											turmas[j].SetAlunos(alunos[i],k);
+										}
+									}
+									for(int k = 1; k < turmas[j].alunos.lenght;k++){
+										int chave = turmas[j].alunos[k];
+				            					int i = k-1;
+										while(i >= 0 && turmas[j].alunos[i].compareToIgnoreCase(chave)>0){
+										turmas[j].alunos[i+1] = turmas[j].alunos[i];
+										i--;
+										}
+										turmas[j].alunos[i+1] = chave;
+										}			
+								}
+								else{System.out.println("Turma Inexistente");
+								}
+							}
+							break;
+						case "3":
+							entrada.nextLine();
+							System.out.print("\nInforme o nome da turma: ");
+							buscarT = entrada.nextLine();
+							for(int j = 0; j < turmas.length; j++){
+								if(buscarT.equals(turmas[j].getId())){
+									for(int i = 0; i < professores.length; i++){
+										for(int k = 0; k < professores[i].turmasDoProf.length; k++){
+											int c = 0;
+											if(professores[i].turmasDoProf[k].getTurmasDoProf().equals(turmas[j].getId())){
+											turmas[j].setProfessores(professores[i].turmasDoProf[k],c);
+											}
+										}
+									}
+								}
+								else{System.out.println("Turma Inexistente");}
+							}
+							break;
+												
+						case "4":
+							entrada.nextLine();
+							System.out.print("\nInforme o nome da turma: ");
+							buscarT = entrada.nextLine();
+							for(int j = 0; j < turmas.length; j++){
+								if(buscarT.equals(turmas[j].getId())){
+									for(int i = 0; i < turmas[j].professores.lenght;i++){		
+										System.out.println("turmas[j].professores[i].getNome()");}			
+					
+									for(int i = 0; i < turmas[j].alunos.lenght;i++){
+										System.out.println("alunos[i] "+" turmas[j].alunos[i].getNome() "+"turmas[j].alunos[i].getMatricula()");
+									}		
+								}
+								else{System.out.println("Turma Inexistente");}
+							}
+							break;
+				break;}
+				
+
+							
+
+				/*case "4":
 					funcionarios
-					break;
-				*/
+					break;*/
 
 				case "0":
 					done = true;
