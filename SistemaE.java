@@ -526,17 +526,17 @@ public class SistemaE{
 									for(int i = 0; i < alunos.length; i++){
 										int k = 0;
 										if(alunos[i].getTurmadoAluno().equals(turmas[j].getId())){
-											turmas[j].SetAlunos(alunos[i],k);
+											turmas[j].setAlunos(alunos[i],k);
 										}
 									}
-									for(int k = 1; k < turmas[j].alunos.lenght;k++){
-										int chave = turmas[j].alunos[k];
+									for(int k = 1; k < turmas[j].alunos.length;k++){
+										String chave = turmas[j].alunos[k].getNome();
 				            					int i = k-1;
-										while(i >= 0 && turmas[j].alunos[i].compareToIgnoreCase(chave)>0){
+										while(i >= 0 && turmas[j].alunos[i].getNome().compareToIgnoreCase(chave)>0){
 										turmas[j].alunos[i+1] = turmas[j].alunos[i];
 										i--;
 										}
-										turmas[j].alunos[i+1] = chave;
+										turmas[j].alunos[i+1].setNome(chave);
 										}			
 								}
 								else{System.out.println("Turma Inexistente");
@@ -568,10 +568,10 @@ public class SistemaE{
 							buscarT = entrada.nextLine();
 							for(int j = 0; j < turmas.length; j++){
 								if(buscarT.equals(turmas[j].getId())){
-									for(int i = 0; i < turmas[j].professores.lenght;i++){		
+									for(int i = 0; i < turmas[j].professores.length;i++){		
 										System.out.println("turmas[j].professores[i].getNome()");}			
 					
-									for(int i = 0; i < turmas[j].alunos.lenght;i++){
+									for(int i = 0; i < turmas[j].alunos.length;i++){
 										System.out.println("alunos[i] "+" turmas[j].alunos[i].getNome() "+"turmas[j].alunos[i].getMatricula()");
 									}		
 								}
@@ -579,6 +579,7 @@ public class SistemaE{
 							}
 							break;
 				break;}
+				
 				
 
 							
