@@ -711,13 +711,18 @@ public class SistemaE{
 									funcionarios[contF].setSalario(entrada.nextDouble());
 
 									entrada.nextInt(); // Limpando o Buffer
+									
+									System.out.print("\nInforme o cargo: ");
+									funcionarios[contF].setCargo(entrada.nextLine());
+									
+									entrada.nextLine();
 
 									System.out.println("\n Dados alterados com sucesso.");
 								}
 							}
 
 							if(!funcionario){
-								System.out.println("\n Funcioario informado nao existente");
+								System.out.println("\n Funcionario informado nao existente");
 							}
 
 							break;
