@@ -9,6 +9,7 @@ public class SistemaE{
 		boolean done = false; //aux para o while
 		boolean aluno = false; //aux para verificar se o aluno informado existe no sistema
 		boolean professor = false; //aux para verificar se o professor informado existe no sistema
+		boolean funcionario = false; //auxo para verificar se o funcionario informado existe no sistema
 		String matriculaB = ""; //aux para busca de aluno/professor/funcionario
 	
 		String opcao = "";
@@ -24,8 +25,12 @@ public class SistemaE{
 		Turma turmas[] = new Turma[50];
 		int contT = 0; //contador para o array alunos
 		String buscarT = ""; //String aux para fazer busca de turmas
+		
+		Funcionario funcionarios[] = new Funcionario[500];
+		int contF = 0;
+		String buscarF = "";
 
-		//InstanciaÃ§Ã£o dos objetos dos arrays alunos, professores e turmas
+		//InstanciaÃ§Ã£o dos objetos dos arrays alunos, professores, turmas e funcionarios
 		for(int i = 0; i < alunos.length; i++){
 			alunos[i] = new Aluno();
 		}
@@ -36,6 +41,10 @@ public class SistemaE{
 
 		for(int i = 0; i < turmas.length; i++){
 			turmas[i] = new Turma();
+		}
+		
+		for(int i = 0; i < funcionarios.length; i++){
+			funcionarios[i] = new Funcionario();
 		}
 		//Fim da instanciaÃ§Ã£o
 
@@ -584,9 +593,186 @@ public class SistemaE{
 
 							
 
-				/*case "4":
-					funcionarios
-					break;*/
+				case "4":
+					System.out.println("\n1 - Cadastrar funcionario");
+					System.out.println("2 - Alterar dados do funcionario");
+					System.out.println("3 - Remover funcionario");
+					System.out.println("4 - Consultar funcionario");
+					System.out.println("0 - Voltar ao menu anterior");
+
+					System.out.print("\nInforme a opcao desejada: ");
+					opcao = entrada.next();
+
+					switch (opcao){
+
+						case "1": // Cadastramento
+
+							entrada.nextLine(); // Limpando o Buffer
+
+							System.out.print("\n Informe o nome: ");
+							funcionarios[contF].setNome(entrada.nextLine());
+
+							entrada.nextLine(); // Limpando o Buffer
+
+							System.out.print("\nInforme o cpf: ");
+							funcionarios[contF].setCpf(entrada.nextLine());
+
+							entrada.nextLine(); // Limpando o Buffer
+
+							System.out.print("\nInforme o rg: ");
+							funcionarios[contF].setRg(entrada.nextLine());
+
+							entrada.nextLine(); // Limpando o Buffer
+
+							System.out.print("\nInforme a matricula: ") ;
+							funcionarios[contF].setMatricula(entrada.nextLine());
+
+							entrada.nextLine(); // Limpando o Buffer
+
+							System.out.print("\nInforme o telefone: ");
+							funcionarios[contF].setTelefone(entrada.nextLine());
+
+							entrada.nextLine(); // Limpando o Buffer
+
+							System.out.print("\nInforme o email: ");
+							funcionarios[contF].setEmail(entrada.nextLine());
+
+							entrada.nextLine(); // Limpando o Buffer
+
+							System.out.print("\nInforme o tipo sanguineo: ");
+							funcionarios[contF].setTipoSanguineo(entrada.nextLine());
+
+							entrada.nextDouble(); // Limpando o Buffer
+
+							System.out.print("\nInforme o salario: ");
+							funcionarios[contF].setSalario(entrada.nextDouble());
+
+							entrada.nextLine(); // Limpando o Buffer
+
+
+							System.out.print("\nInforme o cargo: ");
+							funcionarios[contF].setCargo(entrada.nextLine());
+
+        						entrada.nextLine();
+
+							contF++;
+
+							break;
+
+						case "2": // Alterar
+							entrada.nextLine(); // Limpando o Buffer
+
+							System.out.print("\nInforme o nome do funcionario que deseja alterar: ");
+							buscarF = entrada.nextLine();
+
+							funcionario = false;
+							for(int i = 0; i < funcionarios.length; i++){
+								if(buscarF.equals(funcionarios[i].getNome())){
+									fucionario = true;
+
+									entrada.nextLine(); // Limpando o Buffer
+
+									System.out.print("\n Informe o nome: ");
+									funcionarios[contF].setNome(entrada.nextLine());
+
+									entrada.nextLine(); // Limpando o Buffer
+
+									System.out.print("\nInforme o cpf: ");
+									funcionarios[contF].setCpf(entrada.nextLine());
+
+									entrada.nextLine(); // Limpando o Buffer
+
+									System.out.print("\nInforme o rg: ");
+									funcionarios[contF].setRg(entrada.nextLine());
+
+									entrada.nextLine(); // Limpando o Buffer
+
+									System.out.print("\nInforme a matricula: ") ;
+									funcionarios[contF].setMatricula(entrada.nextLine());
+
+									entrada.nextLine(); // Limpando o Buffer
+
+									System.out.print("\nInforme o telefone: ");
+									funcionarios[contF].setTelefone(entrada.nextLine());
+
+									entrada.nextLine(); // Limpando o Buffer
+
+									System.out.print("\nInforme o email: ");
+									funcionarios[contF].setEmail(entrada.nextLine());
+
+									entrada.nextLine(); // Limpando o Buffer
+
+									System.out.print("\nInforme o tipo sanguineo: ");
+									funcionarios[contF].setTipoSanguineo(entrada.nextLine());
+
+									entrada.nextDouble(); // Limpando o Buffer
+
+									System.out.print("\nInforme o salario: ");
+									funcionarios[contF].setSalario(entrada.nextDouble());
+
+									entrada.nextInt(); // Limpando o Buffer
+
+									System.out.println("\n Dados alterados com sucesso.");
+								}
+							}
+
+							if(!funcionario){
+								System.out.println("\n Funcioario informado nao existente");
+							}
+
+							break;
+
+						case "3": // Remover
+							entrada.nextLine(); // Limpando o Buffer
+
+							System.out.print("\nInforme o nome do funcionario para remocao: ");
+							buscarF = entrada.nextLine();
+
+							funcionario = false;
+							for(int i = 0; i < funcionarios.length; i++){
+								if(buscarF.equals(funcionarios[i].getNome())){
+									funcionario = true;
+
+									for(int j = i; j < funcionarios.length; j++){
+										if(j == (funcionarios.length - 1)){
+											funcionarios[j] = new Prof();
+										}else{
+											funcionarios[j] = funcionarios[j+1];
+										}
+									}
+
+									System.out.println("\nO funcionario foi removido com sucesso");
+
+									--contF;
+								}
+							}
+
+							if(!funcionario){
+								System.out.println("\nfuncionario nao existente.");
+							}
+
+							break;
+
+						case "4": //Consultar
+							entrada.nextLine(); // Limpando o Buffer
+
+							System.out.print("\nInforme o nome do funcionario: ");
+							buscarF = entrada.nextLine();
+
+							funcionario = false;
+							for(int i = 0; i < funcionarios.length; i++){
+								if(buscarF.equals(funcionarios[i].getNome())){
+									funcionario = true;
+									System.out.print(funcionarios[i] + "\n");
+								}
+							}
+
+							if(!funcionario){
+								System.out.println("\nfuncionario nao existente.");
+							}
+
+							break;
+
 
 				case "0":
 					done = true;
