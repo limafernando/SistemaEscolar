@@ -14,6 +14,7 @@ public class Turma{
 			professores[i] = new Prof();
 		}
 	}*/
+	
 
 	public Turma(){
 		id = "";
@@ -35,8 +36,8 @@ public class Turma{
 		alunos[i] = a;
 	}
 
-	public void setProfessores(Prof p, int i){
-		professores[i] = p;
+	public void setProfessores(Prof prof, String p, int i){
+		prof.setTurmasDoProf(p);
 	}
 
 	public String getId(){
