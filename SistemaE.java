@@ -366,9 +366,9 @@ public class SistemaE{
 							entrada.nextInt(); // Limpando o Buffer
 							
 							System.out.print("\nQuantas turmas tem esse professor?");
-							for(int i = 0; i < entrada.nextInt(); i++);{
+							for(int i = 0; i < entrada.nextInt(); i++){
 								entrada.nextLine(); //Limpando o Buffer
-								System.out.print("Informe a ID da turma " + (i+1) + ": ");
+								System.out.print("\nInforme a ID da turma " + (i+1) + ": ");
 								professores[contP].setTurmasDoProf(entrada.nextLine()); 
 							}
 							
@@ -430,9 +430,9 @@ public class SistemaE{
 									entrada.nextInt(); // Limpando o Buffer
 							
 									System.out.print("\nQuantas turmas tem esse professor?");
-									for(int j = 0; j < entrada.nextInt(); j++);{
+									for(int j = 0; j < entrada.nextInt(); j++){
 										entrada.nextLine(); //Limpando o Buffer
-										System.out.print("Informe a ID da turma " + (j+1) + ": ");
+										System.out.print("\nInforme a ID da turma %d: " + (j+1) + ": ");
 										professores[contP].setTurmasDoProf(entrada.nextLine()); 
 									}
 									
