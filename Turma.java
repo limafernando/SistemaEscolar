@@ -14,7 +14,7 @@ public class Turma{
 			professores[i] = new Prof();
 		}
 	}*/
-	
+	protected String disciplinas[] = new String[20];
 
 	public Turma(){
 		id = "";
