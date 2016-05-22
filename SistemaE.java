@@ -379,12 +379,12 @@ public class SistemaE{
 						case "2": // Alterar
 							entrada.nextLine(); // Limpando o Buffer
 							
-							System.out.print("\nInforme o nome do professor que deseja alterar: ");
-							buscarP = entrada.nextLine();
+							System.out.print("\nInforme a matricula do professor que deseja alterar: ");
+							matriculaB = entrada.nextLine();
 							
 							professor = false;
 							for(int i = 0; i < professores.length; i++){
-								if(buscarP.equals(professores[i].getNome())){
+								if(matriculaB.equals(professores[i].getMatricula())){
 									professor = true;
 									
 									entrada.nextLine(); // Limpando o Buffer
@@ -450,12 +450,12 @@ public class SistemaE{
 						case "3": // Remover
 							entrada.nextLine(); // Limpando o Buffer
 							
-							System.out.print("\nInforme o nome do professor para remocao: ");
-							buscarP = entrada.nextLine();
+							System.out.print("\nInforme a matricula do professor para remocao: ");
+							matriculaB = entrada.nextLine();
 							
 							professor = false;
 							for(int i = 0; i < professores.length; i++){
-								if(buscarA.equals(professores[i].getNome())){
+								if(matriculaB.equals(professores[i].getMatricula())){
 									professor = true;
 									
 									for(int j = i; j < professores.length; j++){
@@ -481,12 +481,12 @@ public class SistemaE{
 						case "4": //Consultar
 							entrada.nextLine(); // Limpando o Buffer
 							
-							System.out.print("\nInforme o nome do professor: ");
-							buscarP = entrada.nextLine();
+							System.out.print("\nInforme a matricula do professor: ");
+							matriculaB = entrada.nextLine();
 
 							professor = false;
 							for(int i = 0; i < professores.length; i++){
-								if(buscarA.equals(professores[i].getNome())){
+								if(matriculaB.equals(professores[i].getMatricula())){
 									professor = true;
 									System.out.print(professores[i] + "\n");
 								}
