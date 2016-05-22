@@ -4,7 +4,7 @@ public class Prof extends Funcionario{
 	
 	private int aux1 = 0; //varíavel para auxiliar o Set de Turmas
 	private String aux2 = ""; //varíavel para auxiliar o Get de Turmas
-	
+	private int aux3 = 0;
 	// cargo vai ser iniciado como "professor"
 
 	public Prof(){
