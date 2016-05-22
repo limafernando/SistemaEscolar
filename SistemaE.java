@@ -561,9 +561,12 @@ public class SistemaE{
 									for(int i = 0; i < professores.length; i++){
 										for(int k = 0; k < professores[i].turmasDoProf.length; k++){
 											int c = 0;
-											if(professores[i].turmasDoProf[k].getTurmasDoProf().equals(turmas[j].getId())){
-											turmas[j].setProfessores(professores[i].turmasDoProf[k],c);
+											if(professores[i].getTurmasDoProf().equals(turmas[j].getId())){
+												
+												turmas[j].setProfessores(professores[i], professores[i].getTurmasDoProf(),c);
 											}
+												
+											
 										}
 									}
 								}
