@@ -310,6 +310,8 @@ public class SistemaE{
 					
 				case "2":   //professores
 				
+					System.out.println("\t\t\t Professores:");
+				
 					System.out.println("\n1 - Cadastrar professor");
 					System.out.println("2 - Alterar dados do professor");
 					System.out.println("3 - Remover professor");
@@ -331,32 +333,32 @@ public class SistemaE{
 							entrada.nextLine(); // Limpando o Buffer
 							
 							System.out.print("\nInforme o cpf: ");
-							professores[contP].setCpf(entrada.nextLine());
+							professores[contP].setCpf(entrada.next());
 							
 							entrada.nextLine(); // Limpando o Buffer
 							
 							System.out.print("\nInforme o rg: ");
-							professores[contP].setRg(entrada.nextLine());
+							professores[contP].setRg(entrada.next());
 							
 							entrada.nextLine(); // Limpando o Buffer
 							
 							System.out.print("\nInforme a matricula: ") ;
-							professores[contP].setMatricula(entrada.nextLine());
+							professores[contP].setMatricula(entrada.next());
 							
 							entrada.nextLine(); // Limpando o Buffer
 							
 							System.out.print("\nInforme o telefone: ");
-							professores[contP].setTelefone(entrada.nextLine());
+							professores[contP].setTelefone(entrada.next());
 							
 							entrada.nextLine(); // Limpando o Buffer
 							
 							System.out.print("\nInforme o email: ");
-							professores[contP].setEmail(entrada.nextLine());
+							professores[contP].setEmail(entrada.next());
 							
 							entrada.nextLine(); // Limpando o Buffer
 							
 							System.out.print("\nInforme o tipo sanguineo: ");
-							professores[contP].setTipoSanguineo(entrada.nextLine());
+							professores[contP].setTipoSanguineo(entrada.next());
 							
 							entrada.nextDouble(); // Limpando o Buffer
 							
@@ -369,7 +371,7 @@ public class SistemaE{
 							for(int i = 0; i < entrada.nextInt(); i++){
 								entrada.nextLine(); //Limpando o Buffer
 								System.out.print("\nInforme a ID da turma " + (i+1) + ": ");
-								professores[contP].setTurmasDoProf(entrada.nextLine()); 
+								professores[contP].setTurmasDoProf(entrada.next()); 
 							}
 							
 							contP++;
@@ -395,32 +397,32 @@ public class SistemaE{
 									entrada.nextLine(); // Limpando o Buffer
 								
 									System.out.print("\nInforme o cpf: ");
-									professores[contP].setCpf(entrada.nextLine());
+									professores[contP].setCpf(entrada.next());
 							
 									entrada.nextLine(); // Limpando o Buffer
 							
 									System.out.print("\nInforme o rg: ");
-									professores[contP].setRg(entrada.nextLine());
+									professores[contP].setRg(entrada.next());
 							
 									entrada.nextLine(); // Limpando o Buffer
 							
 									System.out.print("\nInforme a matricula: ") ;
-									professores[contP].setMatricula(entrada.nextLine());
+									professores[contP].setMatricula(entrada.next());
 							
 									entrada.nextLine(); // Limpando o Buffer
 							
 									System.out.print("\nInforme o telefone: ");
-									professores[contP].setTelefone(entrada.nextLine());
+									professores[contP].setTelefone(entrada.next());
 							
 									entrada.nextLine(); // Limpando o Buffer
 							
 									System.out.print("\nInforme o email: ");
-									professores[contP].setEmail(entrada.nextLine());
+									professores[contP].setEmail(entrada.next());
 							
 									entrada.nextLine(); // Limpando o Buffer
 							
 									System.out.print("\nInforme o tipo sanguineo: ");
-									professores[contP].setTipoSanguineo(entrada.nextLine());
+									professores[contP].setTipoSanguineo(entrada.next());
 							
 									entrada.nextDouble(); // Limpando o Buffer
 							
@@ -433,7 +435,7 @@ public class SistemaE{
 									for(int j = 0; j < entrada.nextInt(); j++){
 										entrada.nextLine(); //Limpando o Buffer
 										System.out.print("\nInforme a ID da turma %d: " + (j+1) + ": ");
-										professores[contP].setTurmasDoProf(entrada.nextLine()); 
+										professores[contP].setTurmasDoProf(entrada.next()); 
 									}
 									
 									
