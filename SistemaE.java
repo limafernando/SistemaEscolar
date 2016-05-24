@@ -563,7 +563,7 @@ public class SistemaE{
 											int c = 0;
 											if(professores[i].getTurmasDoProf().equals(turmas[j].getId())){
 												
-												turmas[j].setProfessores(professores[i], professores[i].getTurmasDoProf(),c);
+												turmas[j].setProfessores(professores[i], professores[i].getTurmasDoProf());
 											}
 												
 											
