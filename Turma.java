@@ -36,7 +36,7 @@ public class Turma{
 		alunos[i] = a;
 	}
 
-	public void setProfessores(Prof prof, String p, int i){
+	public void setProfessores(Prof prof, String p){
 		prof.setTurmasDoProf(p);
 	}
 
