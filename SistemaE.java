@@ -309,9 +309,7 @@ public class SistemaE{
 					
 					
 				case "2":   //professores
-				
-					System.out.println("\t\t\t Professores:");
-				
+			
 					System.out.println("\n1 - Cadastrar professor");
 					System.out.println("2 - Alterar dados do professor");
 					System.out.println("3 - Remover professor");
