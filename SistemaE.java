@@ -673,7 +673,7 @@ public class SistemaE{
 							funcionario = false;
 							for(int i = 0; i < funcionarios.length; i++){
 								if(buscarF.equals(funcionarios[i].getNome())){
-									fucionario = true;
+									funcionario = true;
 
 									entrada.nextLine(); // Limpando o Buffer
 
