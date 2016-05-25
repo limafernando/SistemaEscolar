@@ -589,8 +589,10 @@ public class SistemaE{
 								}
 								else{System.out.println("Turma Inexistente");}
 							}
+				
 							break;
-				break;}
+					}
+				break;
 				
 				
 
@@ -790,6 +792,7 @@ public class SistemaE{
 					System.out.println("Opcao invalida!");
 					break;
 			}
+		    }
 		}//fecha o while
 	}//fecha o main
 }//fecha a classe
