@@ -33,11 +33,11 @@ public class Turma{
 	}
 
 	public void setAlunos(Aluno a, int i){
-		alunos[i] = a;
+		this.alunos[i] = a;
 	}
 
-	public void setProfessores(Prof prof, String p){
-		prof.setTurmasDoProf(p);
+	public void setProfessores(Prof prof, int i){
+		this.professores[i] = prof;
 	}
 
 	public String getId(){
