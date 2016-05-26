@@ -328,7 +328,7 @@ public class SistemaE{
 							System.out.print("\n Informe o nome: ");
 							professores[contP].setNome(entrada.nextLine());
 							
-							entrada.nextLine(); // Limpando o Buffer
+							//entrada.nextLine(); // Limpando o Buffer
 							
 							System.out.print("\nInforme o cpf: ");
 							professores[contP].setCpf(entrada.next());
@@ -392,7 +392,7 @@ public class SistemaE{
 									System.out.print("\n Informe o nome: ");
 									professores[contP].setNome(entrada.nextLine());
 							
-									entrada.nextLine(); // Limpando o Buffer
+									//entrada.nextLine(); // Limpando o Buffer
 								
 									System.out.print("\nInforme o cpf: ");
 									professores[contP].setCpf(entrada.next());
