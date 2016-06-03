@@ -31,3 +31,10 @@ protected String turmasDoProf[] = new String[10];
 		/*aux2 = turmasDoProf[aux3]; 
 		aux3++;
 		return aux2;*/
+		return turmasDoProf[i];
+	}	
+	
+	public String toString(){
+		return super.toString() + "\nTurmas do Professor: " + getTurmasDoProf();
+	}
+}
