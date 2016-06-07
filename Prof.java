@@ -9,8 +9,8 @@ protected String turmasDoProf[] = new String[10];
 	private int aux1 = 0; //varíavel para auxiliar o Set de Turmas
 	private String aux2 = ""; //varíavel para auxiliar o Get de Turmas
 	private int aux3 = 0; // auxilia também o Get de Turmas
+	
 	// cargo vai ser iniciado como "professor"
-
 	public Prof(){
 		super("Professor");
 		matricula = "";
