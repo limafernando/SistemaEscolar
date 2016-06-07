@@ -1,16 +1,17 @@
-import java.util.Scanner;
+package sistemaEscolar;
+import javax.swing.JOptionPane;
 
 public class SistemaE{
 
 	public static void main(String args[]){
 
-		Scanner entrada = new Scanner(System.in);
 
 		boolean done = false; //aux para o while
 		boolean aluno = false; //aux para verificar se o aluno informado existe no sistema
 		boolean professor = false; //aux para verificar se o professor informado existe no sistema
 		boolean funcionario = false; //auxo para verificar se o funcionario informado existe no sistema
 		boolean turma = false;
+                
 		String matriculaB = ""; //aux para busca de aluno/professor/funcionario
 	
 		String opcao = "";
@@ -31,7 +32,7 @@ public class SistemaE{
 		int contF = 0;
 		String buscarF = "";
 
-		//InstanciaÃ§Ã£o dos objetos dos arrays alunos, professores, turmas e funcionarios
+		//Instanciacao dos objetos dos arrays alunos, professores, turmas e funcionarios
 		for(int i = 0; i < alunos.length; i++){
 			alunos[i] = new Aluno();
 		}
@@ -47,245 +48,126 @@ public class SistemaE{
 		for(int i = 0; i < funcionarios.length; i++){
 			funcionarios[i] = new Funcionario();
 		}
-		//Fim da instanciaÃ§Ã£o
+		//Fim da instanciao
 
 		while(!done){
 		
-			System.out.println("\n1 - Alunos");
-			System.out.println("2 - Professores");
-			System.out.println("3 - Turmas");
-			System.out.println("4 - Funcionarios");
-			System.out.println("0 - Encerrar programa");
-
-			System.out.print("\nInforme a opcao desejada: ");
-			opcao = entrada.next();
+			opcao = JOptionPane.showInputDialog(null, "1 - Alunos \n2 - Professor \n3 - Turmas \n4 - Funcionarios \n0 - Encerrar programa \nInforme a opcao desejada: " );
 
 			switch (opcao){
 				case "1": //Alunos
-					System.out.println("\n1 - Cadastrar aluno");
-					System.out.println("2 - Alterar dados do aluno"); //buscar pelo nome
-					System.out.println("3 - Remover aluno"); //buscar pelo nome
-					System.out.println("4 - Consultar aluno"); //boletim / buscar pelo nome
-					System.out.println("5 - Registrar notas do aluno"); //buscar pelo nome
-					System.out.println("6 - Gerar declaracao de vinculo");
-					System.out.println("0 - Voltar");
-
-					System.out.print("\nInforme a opcao desejada: ");
-					opcao = entrada.next();
+                                        opcao = JOptionPane.showInputDialog(null, "1 - Cadastrar aluno \n2 - Alterar dados do aluno \n3 - Remover aluno "
+                                                + "\n4 - Consultar aluno \n5 - Registrar notas do aluno \n6 - Gerar declaracao de vinculo "
+                                                + "\n0 - Voltar ao menu anterior \nInforme a opcao desejada: ");
 
 					switch (opcao){
 
 						case "1": //Cadastrar aluno
-							entrada.nextLine(); //LIMPAR BUFFER DX SACANNER CHAMADO ENTRADA, MORAL, SE N DA RUIM
-							
-							System.out.print("\nInforme o nome: ");
-							alunos[contA].setNome(entrada.nextLine());
-
-							System.out.print("\nInforme o cpf: ");
-							alunos[contA].setCpf(entrada.next());
-							/*
-							entrada.nextLine(); //Limpando buffer
-
-							System.out.print("\nInforme o rg: ");
-							alunos[contA].setRg(entrada.next());
-
-							entrada.nextLine(); //Limpando buffer
-							
-							System.out.print("\nInforme o matricula: ") ;
-							alunos[contA].setMatricula(entrada.next());
-
-							entrada.nextLine(); //Limpando buffer
-							
-							System.out.print("\nInforme o telefone: ");
-							alunos[contA].setTelefone(entrada.next());
-							entrada.nextLine(); //Limpando buffer
-							
-							System.out.print("\nInforme o email: ");
-							alunos[contA].setEmail(entrada.next());
-							entrada.nextLine(); //Limpando buffer
-							
-							System.out.print("\nInforme o tipo sanguineo: ");
-							alunos[contA].setTipoSanguineo(entrada.next());
-							entrada.nextLine(); //Limpando buffer
-							*/
-							System.out.print("\nInforme a turma: ");
-							alunos[contA].setTurmaDoAluno(entrada.next());
-							entrada.nextLine(); //Limpando buffer
-							/*System.out.print("\nInforme o nome do responsavel: ");
-							alunos[contA].setNomeResponsavel(entrada.next());
-							entrada.nextLine(); //Limpando buffer
-							
-							System.out.print("\nInforme o telefone do responsavel: ");
-							alunos[contA].setTelefoneResponsavel(entrada.next());
-							entrada.nextLine(); //Limpando buffer
-							
-							System.out.print("\nInforme a mensalidade: ");
-							alunos[contA].setMensalidade(entrada.nextDouble());
-							entrada.nextLine(); //Limpando buffer
-							//criar e utilizar um metodo de ordenaÃ§Ã£o no array alunos*/
-
-							System.out.println("\nAluno cadastrado com sucesso!");
+							alunos[contA].cadastrarAluno(alunos[contA]);
 
 							contA++;
 
 							break;
 
 						case "2": //Alterar dados de um aluno cadastrado
-							entrada.nextLine(); //Limpando buffer
-
-							System.out.print("\nInforme o nome do aluno: ");
-							buscarA = entrada.nextLine();
-
-							System.out.print("\nInforme a matricula do aluno: ");
-							matriculaB = entrada.nextLine();
+                                                    
+                                                    matriculaB = "";
+                                                    matriculaB = JOptionPane.showInputDialog(null, "Informe a matricula do aluno: ");
 
 							aluno = false;
 							//Busca
 							for(int i = 0; i < alunos.length; i++){
-								if(buscarA.equals(alunos[i].getNome()) && matriculaB.equals(alunos[i].getMatricula())){
+								if(matriculaB.equals(alunos[i].getMatricula())){
 
 									aluno = true;
-									System.out.print("\nInforme o nome: ");
-									alunos[i].setNome(entrada.nextLine());
-
-									System.out.print("\nInforme o cpf: ");
-									alunos[i].setCpf(entrada.next());
-
-									entrada.nextLine(); //Limpando buffer
-
-									System.out.print("\nInforme o rg: ");
-									alunos[i].setRg(entrada.next());
-
-									entrada.nextLine(); //Limpando buffer
 									
-									System.out.print("\nInforme o matricula: ") ;
-									alunos[i].setMatricula(entrada.next());
-
-									entrada.nextLine(); //Limpando buffer
-									
-									/*System.out.print("\nInforme o telefone: ");
-									alunos[i].setTelefone(entrada.next());
-									entrada.nextLine(); //Limpando buffer
-									
-									System.out.print("\nInforme o email: ");
-									alunos[i].setEmail(entrada.next());
-									entrada.nextLine(); //Limpando buffer
-									
-									System.out.print("\nInforme o tipo sanguineo: ");
-									alunos[i].setTipoSanguineo(entrada.next());
-									entrada.nextLine(); //Limpando buffer
-									
-									System.out.print("\nInforme a turma: ");
-									alunos[i].setTurmaDoAluno(entrada.next());
-									entrada.nextLine(); //Limpando buffer
-									System.out.print("\nInforme o nome do responsavel: ");
-									alunos[i].setNomeResponsavel(entrada.next());
-									entrada.nextLine(); //Limpando buffer
-									
-									System.out.print("\nInforme o telefone do responsavel: ");
-									alunos[i].setTelefoneResponsavel(entrada.next());
-									entrada.nextLine(); Limpando buffer
-									
-									System.out.print("\nInforme a mensalidade: ");
-									alunos[i].setMensalidade(entrada.nextDouble());
-									entrada.nextLine(); //Limpando buffer*/
-
-									System.out.println("\nDados alterados com sucesso!");
-								}
+                                                                        alunos[i].alterarDadosAluno(alunos[i]);
+                                                                }
 							}
 
 							if(!aluno){
-								System.out.println("\nAluno nao existente!");
+								JOptionPane.showMessageDialog(null, "Aluno nao existente!");
 							}
 
 							break;
 
 						case "3": //Remover um aluno cadastrado
-							entrada.nextLine(); //Limpando buffer
-
-							System.out.print("\nInforme o nome do aluno: ");
-							buscarA = entrada.nextLine();
-
-							matriculaB = "";
-							System.out.print("\nInforme a matricula do aluno: ");
-							matriculaB = entrada.nextLine();
-
-							//utilizar o metodo de busca
-							//remover o elemento desejado do array alunos
-							//reordenar
+                                                        
+                                                        matriculaB = "";
+							matriculaB = JOptionPane.showInputDialog(null, "Informe a matricula do aluno: ");
 
 							aluno = false;
 							//Busca
 							for(int i = 0; i < alunos.length; i++){
-								if(buscarA.equals(alunos[i].getNome()) && matriculaB.equals(alunos[i].getMatricula())){
+								if(matriculaB.equals(alunos[i].getMatricula())){
 									aluno = true;
 									
 									//Caso o aluno desejado seja encontrado, cada elemento do array alunos, a partir do elemento
 									//que se encontra do aluno desejado, vai receber o conteÃºdo do elemento a frente, exceto se
 									//o elemento for o Ãºltimo do array, neste caso, ele vai ser instanciado
 
-									for(int j = i; j < alunos.length; j++){
-										
-										if(j == (alunos.length - 1)){
-											alunos[j] = new Aluno();
-										}
-										
-										else{
-											alunos[j] = alunos[j+1];
-										}
-									}
-
-									System.out.println("\nAluno removido com sucesso!");
+									alunos[i].removerAluno(alunos, i);
 
 									--contA; //Contador de alunos vai ser decrementado
 								}
 							}
 
 							if(!aluno){
-								System.out.println("\nAluno nao existente!");
+								JOptionPane.showMessageDialog(null, "Aluno nao existente!");
 							}
 
 							break;
 
 						case "4": //Consultar dados de um aluno
-							entrada.nextLine(); //Limpando buffer
-							
-							System.out.print("\nInforme o nome do aluno: ");
-							buscarA = entrada.nextLine();
-
-							System.out.print("\nInforme a matricula do aluno: ");
-							matriculaB = entrada.nextLine();
+							                                                        
+                                                        matriculaB = "";
+							matriculaB = JOptionPane.showInputDialog(null, "Informe a matricula do aluno: ");
 
 							aluno = false;
 							//Busca
 							for(int i = 0; i < alunos.length; i++){
-								if(buscarA.equals(alunos[i].getNome()) && matriculaB.equals(alunos[i].getMatricula())){
-									
+								if(matriculaB.equals(alunos[i].getMatricula())){
 									aluno = true;
-									System.out.print(alunos[i]); //Printa todas as informaÃ§Ãµes do aluno em tela
 
+									alunos[i].consultarAluno(alunos[i]);
 								}
 							}
 
 							if(!aluno){
-								System.out.println("\nAluno nao existente!");
+								JOptionPane.showMessageDialog(null, "Aluno nao existente!");
 							}
+                                                        
+                                                        break;
 
-							break;
-
-						case "5":
-							entrada.nextLine(); //Limpando buffer
-
+						case "5": //notas
+                                                        
 							break;
 							
-						case "6": //Gerar um documento de comprovaÃ§Ã£o de matricula
-							break;
+						case "6": //Gerar um documento de comprovacaoo de matricula
+                                                        matriculaB = "";
+							matriculaB = JOptionPane.showInputDialog(null, "Informe a matricula do aluno: ");
+
+							aluno = false;
+							//Busca
+							for(int i = 0; i < alunos.length; i++){
+								if(matriculaB.equals(alunos[i].getMatricula())){
+									aluno = true;
+
+									alunos[i].declaracaoAluno(alunos[i]);
+								}
+							}
+
+							if(!aluno){
+								JOptionPane.showMessageDialog(null, "Aluno nao existente!");
+							}
+                                                    
+                                                        break;
 
 						case "0": //Voltar
 							break;
 
 						default:
-							System.out.println("\nOpcao invalida!");
+							JOptionPane.showMessageDialog(null,"Opcao invalida!");
 							break;
 					}
 
@@ -293,201 +175,93 @@ public class SistemaE{
 					
 					
 				case "2":   //professores
-			
-					System.out.println("\n1 - Cadastrar professor");
-					System.out.println("2 - Alterar dados do professor");
-					System.out.println("3 - Remover professor");
-					System.out.println("4 - Consultar professor");
-					System.out.println("0 - Voltar ao menu anterior");
+                                         opcao = JOptionPane.showInputDialog(null, "1 - Cadastrar Professor \n2 - Alterar dados do professor \n3 - Remover professor "
+                                                + "\n4 - Consultar professor \n0 - Voltar ao menu anterior \nInforme a opcao desejada: ");
 
-					System.out.print("\nInforme a opcao desejada: ");
-					opcao = entrada.next();
-					
 					switch (opcao){
-						
-						case "1": // Cadastramento
-						
-							entrada.nextLine(); // Limpando o Buffer
-							
-							System.out.print("\n Informe o nome: ");
-							professores[contP].setNome(entrada.nextLine());
-							
-							//entrada.nextLine(); // Limpando o Buffer
-							
-							System.out.print("\nInforme o cpf: ");
-							professores[contP].setCpf(entrada.next());
-							
-							entrada.nextLine(); // Limpando o Buffer
-							
-							/*System.out.print("\nInforme o rg: ");
-							professores[contP].setRg(entrada.next());
-							
-							entrada.nextLine(); // Limpando o Buffer
-							
-							System.out.print("\nInforme a matricula: ") ;
-							professores[contP].setMatricula(entrada.next());
-							
-							entrada.nextLine(); // Limpando o Buffer
-							
-							System.out.print("\nInforme o telefone: ");
-							professores[contP].setTelefone(entrada.next());
-							
-							entrada.nextLine(); // Limpando o Buffer
-							
-							System.out.print("\nInforme o email: ");
-							professores[contP].setEmail(entrada.next());
-							
-							entrada.nextLine(); // Limpando o Buffer
-							
-							System.out.print("\nInforme o tipo sanguineo: ");
-							professores[contP].setTipoSanguineo(entrada.next());
-							
-							entrada.nextDouble(); // Limpando o Buffer
-							
-							System.out.print("\nInforme o salario: ");
-							professores[contP].setSalario(entrada.nextDouble());
-							
-							entrada.nextInt(); // Limpando o Buffer*/
-							
-							System.out.print("\nQuantas turmas tem esse professor?");
-							int provisorio = entrada.nextInt();
-							for(int i = 0; i < provisorio; i++){
-								//entrada.nextLine(); //Limpando o Buffer
-								System.out.print("\nInforme a ID da turma " + (i+1) + ": ");
-								professores[contP].setTurmasDoProf(entrada.next()); 
-							}
-							
+
+						case "1": //Cadastrar professor
+							professores[contP].cadastrarProfessor(professores[contP]);
+
 							contP++;
-							
+
 							break;
-							
-						case "2": // Alterar
-							entrada.nextLine(); // Limpando o Buffer
-							
-							System.out.print("\nInforme a matricula do professor que deseja alterar: ");
-							matriculaB = entrada.nextLine();
-							
-							professor = false;
-							for(int i = 0; i < professores.length; i++){
-								if(matriculaB.equals(professores[i].getMatricula())){
-									professor = true;
-									
-									entrada.nextLine(); // Limpando o Buffer
-							
-									System.out.print("\n Informe o nome: ");
-									professores[contP].setNome(entrada.nextLine());
-							
-									//entrada.nextLine(); // Limpando o Buffer
-								
-									System.out.print("\nInforme o cpf: ");
-									professores[contP].setCpf(entrada.next());
-							
-									entrada.nextLine(); // Limpando o Buffer
-							
-									System.out.print("\nInforme o rg: ");
-									professores[contP].setRg(entrada.next());
-							
-									entrada.nextLine(); // Limpando o Buffer
-							
-									System.out.print("\nInforme a matricula: ") ;
-									professores[contP].setMatricula(entrada.next());
-							
-									entrada.nextLine(); // Limpando o Buffer
-							
-									System.out.print("\nInforme o telefone: ");
-									professores[contP].setTelefone(entrada.next());
-							
-									entrada.nextLine(); // Limpando o Buffer
-							
-									System.out.print("\nInforme o email: ");
-									professores[contP].setEmail(entrada.next());
-							
-									entrada.nextLine(); // Limpando o Buffer
-							
-									System.out.print("\nInforme o tipo sanguineo: ");
-									professores[contP].setTipoSanguineo(entrada.next());
-							
-									entrada.nextDouble(); // Limpando o Buffer
-							
-									System.out.print("\nInforme o salario: ");
-									professores[contP].setSalario(entrada.nextDouble());
-							
-									entrada.nextInt(); // Limpando o Buffer
-							
-									System.out.print("\nQuantas turmas tem esse professor?");
-									for(int j = 0; j < entrada.nextInt(); j++){
-										entrada.nextLine(); //Limpando o Buffer
-										System.out.print("\nInforme a ID da turma %d: " + (j+1) + ": ");
-										professores[contP].setTurmasDoProf(entrada.next()); 
-									}
-									
-									
-									System.out.println("\n Dados alterados com sucesso.");
-								}
-							}
-							
-							if(!professor){
-								System.out.println("\n Professor informado nao existente");
-							}
-							
-							break;
-							
-						case "3": // Remover
-							entrada.nextLine(); // Limpando o Buffer
-							
-							System.out.print("\nInforme a matricula do professor para remocao: ");
-							matriculaB = entrada.nextLine();
-							
-							professor = false;
-							for(int i = 0; i < professores.length; i++){
-								if(matriculaB.equals(professores[i].getMatricula())){
-									professor = true;
-									
-									for(int j = i; j < professores.length; j++){
-										if(j == (professores.length - 1)){
-											professores[j] = new Prof();
-										}else{
-											professores[j] = professores[j+1];
-										}
-									}
-								
-									System.out.println("\nO professor foi removido com sucesso");
-								
-									--contP;
-								}
-							}
-							
-							if(!professor){
-								System.out.println("\nProfessor nao existente.");
-							}
-							
-							break;
-							
-						case "4": //Consultar
-							entrada.nextLine(); // Limpando o Buffer
-							
-							System.out.print("\nInforme a matricula do professor: ");
-							matriculaB = entrada.nextLine();
+
+						case "2": //Alterar dados de um professor cadastrado
+                                                    
+                                                    matriculaB = "";
+                                                    matriculaB = JOptionPane.showInputDialog(null, "Informe a matricula do professor: ");
 
 							professor = false;
+							//Busca
+							for(int i = 0; i < professores.length; i++){
+								if(matriculaB.equals(professores[i].getMatricula())){
+
+									professor = true;
+									
+                                                                        professores[i].alterarDadosProfessor(professores[i]);
+                                                                }
+							}
+
+							if(!professor){
+								JOptionPane.showMessageDialog(null, "Professor nao existente!");
+							}
+
+							break;
+
+						case "3": //Remover um professor cadastrado
+                                                        
+                                                        matriculaB = "";
+							matriculaB = JOptionPane.showInputDialog(null, "Informe a matricula do professor: ");
+
+							professor = false;
+							//Busca
 							for(int i = 0; i < professores.length; i++){
 								if(matriculaB.equals(professores[i].getMatricula())){
 									professor = true;
-									System.out.print(professores[i] + "\n");
+									
+									//Caso o professor desejado seja encontrado, cada elemento do array alunos, a partir do elemento
+									//que se encontra do aluno desejado, vai receber o conteÃºdo do elemento a frente, exceto se
+									//o elemento for ultimo do array, neste caso, ele vai ser instanciado
+
+									professores[i].removerProfessor(professores, i);
+
+									--contP; //Contador de alunos vai ser decrementado
 								}
 							}
 
 							if(!professor){
-								System.out.println("\nProfessor nao existente.");
+								JOptionPane.showMessageDialog(null, "Professor nao existente!");
 							}
-							
+
 							break;
+
+						case "4": //Consultar dados de um professor
+							                                                        
+                                                        matriculaB = "";
+							matriculaB = JOptionPane.showInputDialog(null, "Informe a matricula do professor: ");
+
+							professor = false;
+							//Busca
+							for(int i = 0; i < professores.length; i++){
+								if(matriculaB.equals(professores[i].getMatricula())){
+									professor = true;
+
+									professores[i].consultarProfessor(professores[i]);
+								}
+							}
+
+							if(!professor){
+								JOptionPane.showMessageDialog(null, "Professor nao existente!");
+							}
+                                                        
+                                                        break;
 							
 						case "0": // Voltar
 							break;
 							
 						default:
-							System.out.print("\nOpcao invalida!");
+							JOptionPane.showMessageDialog(null,"Opcao invalida!");
 							break;
 					}
 					
@@ -606,201 +380,107 @@ public class SistemaE{
 
 							
 
-				case "4":
-					System.out.println("\n1 - Cadastrar funcionario");
-					System.out.println("2 - Alterar dados do funcionario");
-					System.out.println("3 - Remover funcionario");
-					System.out.println("4 - Consultar funcionario");
-					System.out.println("0 - Voltar ao menu anterior");
-
-					System.out.print("\nInforme a opcao desejada: ");
-					opcao = entrada.next();
+				case "4": //Funcionarios
+                                        opcao = JOptionPane.showInputDialog(null, "1 - Cadastrar Funcionario \n2 - Alterar dados do funcionario \n3 - Remover funcionario "
+                                                + "\n4 - Consultar funcionario \n0 - Voltar ao menu anterior \nInforme a opcao desejada: ");
 
 					switch (opcao){
 
-						case "1": // Cadastramento
-
-							entrada.nextLine(); // Limpando o Buffer
-
-							System.out.print("\n Informe o nome: ");
-							funcionarios[contF].setNome(entrada.nextLine());
-
-							entrada.nextLine(); // Limpando o Buffer
-
-							System.out.print("\nInforme o cpf: ");
-							funcionarios[contF].setCpf(entrada.nextLine());
-
-							entrada.nextLine(); // Limpando o Buffer
-
-							System.out.print("\nInforme o rg: ");
-							funcionarios[contF].setRg(entrada.nextLine());
-
-							entrada.nextLine(); // Limpando o Buffer
-
-							System.out.print("\nInforme a matricula: ") ;
-							funcionarios[contF].setMatricula(entrada.nextLine());
-
-							entrada.nextLine(); // Limpando o Buffer
-
-							System.out.print("\nInforme o telefone: ");
-							funcionarios[contF].setTelefone(entrada.nextLine());
-
-							entrada.nextLine(); // Limpando o Buffer
-
-							System.out.print("\nInforme o email: ");
-							funcionarios[contF].setEmail(entrada.nextLine());
-
-							entrada.nextLine(); // Limpando o Buffer
-
-							System.out.print("\nInforme o tipo sanguineo: ");
-							funcionarios[contF].setTipoSanguineo(entrada.nextLine());
-
-							entrada.nextDouble(); // Limpando o Buffer
-
-							System.out.print("\nInforme o salario: ");
-							funcionarios[contF].setSalario(entrada.nextDouble());
-
-							entrada.nextLine(); // Limpando o Buffer
-
-
-							System.out.print("\nInforme o cargo: ");
-							funcionarios[contF].setCargo(entrada.nextLine());
-
-        						entrada.nextLine();
+						case "1": //Cadastrar funcionario
+							funcionarios[contF].cadastrarFuncionario(funcionarios[contF]);
 
 							contF++;
 
 							break;
 
-						case "2": // Alterar
-							entrada.nextLine(); // Limpando o Buffer
-
-							System.out.print("\nInforme o nome do funcionario que deseja alterar: ");
-							buscarF = entrada.nextLine();
+						case "2": //Alterar dados de um funcionario cadastrado
+                                                    
+                                                    matriculaB = "";
+                                                    matriculaB = JOptionPane.showInputDialog(null, "Informe a matricula do funcionario: ");
 
 							funcionario = false;
+							//Busca
 							for(int i = 0; i < funcionarios.length; i++){
-								if(buscarF.equals(funcionarios[i].getNome())){
+								if(matriculaB.equals(funcionarios[i].getMatricula())){
+
 									funcionario = true;
-
-									entrada.nextLine(); // Limpando o Buffer
-
-									System.out.print("\n Informe o nome: ");
-									funcionarios[contF].setNome(entrada.nextLine());
-
-									entrada.nextLine(); // Limpando o Buffer
-
-									System.out.print("\nInforme o cpf: ");
-									funcionarios[contF].setCpf(entrada.nextLine());
-
-									entrada.nextLine(); // Limpando o Buffer
-
-									System.out.print("\nInforme o rg: ");
-									funcionarios[contF].setRg(entrada.nextLine());
-
-									entrada.nextLine(); // Limpando o Buffer
-
-									System.out.print("\nInforme a matricula: ") ;
-									funcionarios[contF].setMatricula(entrada.nextLine());
-
-									entrada.nextLine(); // Limpando o Buffer
-
-									System.out.print("\nInforme o telefone: ");
-									funcionarios[contF].setTelefone(entrada.nextLine());
-
-									entrada.nextLine(); // Limpando o Buffer
-
-									System.out.print("\nInforme o email: ");
-									funcionarios[contF].setEmail(entrada.nextLine());
-
-									entrada.nextLine(); // Limpando o Buffer
-
-									System.out.print("\nInforme o tipo sanguineo: ");
-									funcionarios[contF].setTipoSanguineo(entrada.nextLine());
-
-									entrada.nextDouble(); // Limpando o Buffer
-
-									System.out.print("\nInforme o salario: ");
-									funcionarios[contF].setSalario(entrada.nextDouble());
-
-									entrada.nextInt(); // Limpando o Buffer
 									
-									System.out.print("\nInforme o cargo: ");
-									funcionarios[contF].setCargo(entrada.nextLine());
+                                                                        funcionarios[i].alterarDadosFuncionario(funcionarios[i]);
+                                                                }
+							}
+
+							if(!funcionario){
+								JOptionPane.showMessageDialog(null, "Funcionario nao existente!");
+							}
+
+							break;
+
+						case "3": //Remover um funcionario cadastrado
+                                                        
+                                                        matriculaB = "";
+							matriculaB = JOptionPane.showInputDialog(null, "Informe a matricula do funcionario: ");
+
+							funcionario = false;
+							//Busca
+							for(int i = 0; i < funcionarios.length; i++){
+								if(matriculaB.equals(funcionarios[i].getMatricula())){
+									funcionario = true;
 									
-									entrada.nextLine();
+									//Caso o professor desejado seja encontrado, cada elemento do array alunos, a partir do elemento
+									//que se encontra do aluno desejado, vai receber o conteÃºdo do elemento a frente, exceto se
+									//o elemento for ultimo do array, neste caso, ele vai ser instanciado
 
-									System.out.println("\n Dados alterados com sucesso.");
+									funcionarios[i].removerFuncionario(funcionarios, i);
+
+									--contF; //Contador de alunos vai ser decrementado
 								}
 							}
 
 							if(!funcionario){
-								System.out.println("\n Funcionario informado nao existente");
+								JOptionPane.showMessageDialog(null, "Funcionario nao existente!");
 							}
 
 							break;
 
-						case "3": // Remover
-							entrada.nextLine(); // Limpando o Buffer
-
-							System.out.print("\nInforme o nome do funcionario para remocao: ");
-							buscarF = entrada.nextLine();
+						case "4": //Consultar dados de um funcionario
+							                                                        
+                                                        matriculaB = "";
+							matriculaB = JOptionPane.showInputDialog(null, "Informe a matricula do funcionario: ");
 
 							funcionario = false;
+							//Busca
 							for(int i = 0; i < funcionarios.length; i++){
-								if(buscarF.equals(funcionarios[i].getNome())){
+								if(matriculaB.equals(funcionarios[i].getMatricula())){
 									funcionario = true;
 
-									for(int j = i; j < funcionarios.length; j++){
-										if(j == (funcionarios.length - 1)){
-											funcionarios[j] = new Prof();
-										}else{
-											funcionarios[j] = funcionarios[j+1];
-										}
-									}
-
-									System.out.println("\nO funcionario foi removido com sucesso");
-
-									--contF;
+									funcionarios[i].consultarFuncionario(funcionarios[i]);
 								}
 							}
 
 							if(!funcionario){
-								System.out.println("\nfuncionario nao existente.");
+								JOptionPane.showMessageDialog(null, "Funcionario nao existente!");
 							}
-
+                                                        
+                                                        break;
+							
+						case "0": // Voltar
 							break;
-
-						case "4": //Consultar
-							entrada.nextLine(); // Limpando o Buffer
-
-							System.out.print("\nInforme o nome do funcionario: ");
-							buscarF = entrada.nextLine();
-
-							funcionario = false;
-							for(int i = 0; i < funcionarios.length; i++){
-								if(buscarF.equals(funcionarios[i].getNome())){
-									funcionario = true;
-									System.out.print(funcionarios[i] + "\n");
-								}
-							}
-
-							if(!funcionario){
-								System.out.println("\nfuncionario nao existente.");
-							}
-
+							
+						default:
+							JOptionPane.showMessageDialog(null,"Opcao invalida!");
 							break;
-
-
-				case "0":
-					done = true;
+					}
+					
 					break;
-
-				default:
-					System.out.println("Opcao invalida!");
-					break;
-			}
-		    }
+                                        
+                                case "0":
+                                    done = true;
+                                    break;
+                                    
+                                default:
+                                    JOptionPane.showMessageDialog(null, "Opcao invalida!");
+                                    break;
+                        }//fecha switch principal
 		}//fecha o while
 	}//fecha o main
 }//fecha a classe
