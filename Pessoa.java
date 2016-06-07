@@ -1,3 +1,4 @@
+package sistemaEscolar;
 public class Pessoa{
 	
 	protected String nome;
