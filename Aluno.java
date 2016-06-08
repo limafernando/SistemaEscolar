@@ -10,7 +10,7 @@ public class Aluno extends Pessoa{
 	protected String nomeResponsavel;
 	protected String telefoneResponsavel;
 	protected double mensalidade;
-	protected double notas[] = new double[30];
+	protected double notas[][] = new double[10][5];
 
 	public Aluno(){
 		super();
