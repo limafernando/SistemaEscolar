@@ -5,8 +5,6 @@ public class SistemaE{
 
 	public static void main(String args[]){
 
-
-		boolean done = false; //aux para o while
 		boolean aluno = false; //aux para verificar se o aluno informado existe no sistema
 		boolean professor = false; //aux para verificar se o professor informado existe no sistema
 		boolean funcionario = false; //auxo para verificar se o funcionario informado existe no sistema
@@ -50,16 +48,25 @@ public class SistemaE{
 		}
 		//Fim da instanciao
 
-		while(!done){
+		while(true){
 		
-			opcao = JOptionPane.showInputDialog(null, "1 - Alunos \n2 - Professor \n3 - Turmas \n4 - Funcionarios \n0 - Encerrar programa \nInforme a opcao desejada: " );
-
+			opcao = JOptionPane.showInputDialog(null, "1 - Alunos \n2 - Professor \n3 - Turmas \n4 - Funcionarios \nInforme a opcao desejada: ", "SISTEMA ESCOLAR", JOptionPane.CLOSED_OPTION);
+                        
+                        if(opcao == null){
+                            break; //CASO SEJA APERTADO OS BOATOES CANCEL OU CLOSE, OPCAO N RECEBERA NENHUMA VALOR, OU SEJA, NULL
+                            //CASO ISSO OCORRA, ENTRA NO IF E DARA BREAK NOS WHILE/SWITCH
+                        }
+                        
 			switch (opcao){
 				case "1": //Alunos
                                         opcao = JOptionPane.showInputDialog(null, "1 - Cadastrar aluno \n2 - Alterar dados do aluno \n3 - Remover aluno "
                                                 + "\n4 - Consultar aluno \n5 - Registrar notas do aluno \n6 - Gerar declaracao de vinculo "
-                                                + "\n0 - Voltar ao menu anterior \nInforme a opcao desejada: ");
-
+                                                + "\nInforme a opcao desejada: ");
+                                        
+                                        if(opcao == null){
+                                            break;
+                                        }
+                                        
 					switch (opcao){
 
 						case "1": //Cadastrar aluno
@@ -104,11 +111,13 @@ public class SistemaE{
 									
 									//Caso o aluno desejado seja encontrado, cada elemento do array alunos, a partir do elemento
 									//que se encontra do aluno desejado, vai receber o conteÃºdo do elemento a frente, exceto se
-									//o elemento for o Ãºltimo do array, neste caso, ele vai ser instanciado
+									//o elemento for o ultimo do array, neste caso, ele vai ser instanciado novamente
 
 									alunos[i].removerAluno(alunos, i);
 
-									--contA; //Contador de alunos vai ser decrementado
+									if(contA != 0){//Contador de alunos vai ser decrementado
+                                                                            contA--;
+                                                                        }
 								}
 							}
 
@@ -140,6 +149,22 @@ public class SistemaE{
                                                         break;
 
 						case "5": //notas
+                                                        matriculaB = "";
+							matriculaB = JOptionPane.showInputDialog(null, "Informe a matricula do aluno: ");
+
+							aluno = false;
+							//Busca
+							for(int i = 0; i < alunos.length; i++){
+								if(matriculaB.equals(alunos[i].getMatricula())){
+									aluno = true;
+
+									alunos[i].notas(alunos[i]);
+								}
+							}
+
+							if(!aluno){
+								JOptionPane.showMessageDialog(null, "Aluno nao existente!");
+							}
                                                         
 							break;
 							
@@ -163,9 +188,6 @@ public class SistemaE{
                                                     
                                                         break;
 
-						case "0": //Voltar
-							break;
-
 						default:
 							JOptionPane.showMessageDialog(null,"Opcao invalida!");
 							break;
@@ -175,9 +197,13 @@ public class SistemaE{
 					
 					
 				case "2":   //professores
-                                         opcao = JOptionPane.showInputDialog(null, "1 - Cadastrar Professor \n2 - Alterar dados do professor \n3 - Remover professor "
-                                                + "\n4 - Consultar professor \n0 - Voltar ao menu anterior \nInforme a opcao desejada: ");
-
+                                        opcao = JOptionPane.showInputDialog(null, "1 - Cadastrar Professor \n2 - Alterar dados do professor \n3 - Remover professor "
+                                                + "\n4 - Consultar professor \nInforme a opcao desejada: ");
+                                        
+                                        if(opcao == null){
+                                            break;
+                                        }
+                                        
 					switch (opcao){
 
 						case "1": //Cadastrar professor
@@ -226,7 +252,10 @@ public class SistemaE{
 
 									professores[i].removerProfessor(professores, i);
 
-									--contP; //Contador de alunos vai ser decrementado
+									//Contador de alunos vai ser decrementado
+                                                                        if(contP != 0){
+                                                                            contP--;
+                                                                        }
 								}
 							}
 
@@ -256,9 +285,6 @@ public class SistemaE{
 							}
                                                         
                                                         break;
-							
-						case "0": // Voltar
-							break;
 							
 						default:
 							JOptionPane.showMessageDialog(null,"Opcao invalida!");
@@ -377,14 +403,15 @@ public class SistemaE{
 				break;
 				
 				
-
-							
-
 				case "4": //Funcionarios
                                         opcao = JOptionPane.showInputDialog(null, "1 - Cadastrar Funcionario \n2 - Alterar dados do funcionario \n3 - Remover funcionario "
-                                                + "\n4 - Consultar funcionario \n0 - Voltar ao menu anterior \nInforme a opcao desejada: ");
-
-					switch (opcao){
+                                                + "\n4 - Consultar funcionario \nInforme a opcao desejada: ");
+                                        
+                                        if(opcao == null){
+                                            break;
+                                        }
+					
+                                        switch (opcao){
 
 						case "1": //Cadastrar funcionario
 							funcionarios[contF].cadastrarFuncionario(funcionarios[contF]);
@@ -426,13 +453,16 @@ public class SistemaE{
 								if(matriculaB.equals(funcionarios[i].getMatricula())){
 									funcionario = true;
 									
-									//Caso o professor desejado seja encontrado, cada elemento do array alunos, a partir do elemento
+									//Caso o funcionario desejado seja encontrado, cada elemento do array alunos, a partir do elemento
 									//que se encontra do aluno desejado, vai receber o conteÃºdo do elemento a frente, exceto se
 									//o elemento for ultimo do array, neste caso, ele vai ser instanciado
 
 									funcionarios[i].removerFuncionario(funcionarios, i);
 
-									--contF; //Contador de alunos vai ser decrementado
+									//Contador de alunos vai ser decrementado
+                                                                        if(contF != 0){
+                                                                            contF--;
+                                                                        }
 								}
 							}
 
@@ -458,13 +488,10 @@ public class SistemaE{
 							}
 
 							if(!funcionario){
-								JOptionPane.showMessageDialog(null, "Funcionario nao existente!");
+								JOptionPane.showMessageDialog(null, "Funcionarios nao existente!");
 							}
                                                         
                                                         break;
-							
-						case "0": // Voltar
-							break;
 							
 						default:
 							JOptionPane.showMessageDialog(null,"Opcao invalida!");
@@ -472,10 +499,6 @@ public class SistemaE{
 					}
 					
 					break;
-                                        
-                                case "0":
-                                    done = true;
-                                    break;
                                     
                                 default:
                                     JOptionPane.showMessageDialog(null, "Opcao invalida!");
