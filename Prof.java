@@ -23,10 +23,8 @@ protected String turmasDoProf[] = new String[10];
 		turmasDoProf[aux1] = turma;
 		aux1++;
 	}
-	public String getTurmasDoProf(){
-		aux2 = turmasDoProf[aux3]; 
-		aux3++;
-		return aux2;
+	public String getTurmasDoProf2(int i){
+		return turmasDoProf[i];
 	}	
 	
         
@@ -53,7 +51,7 @@ protected String turmasDoProf[] = new String[10];
             
             prof.setSalario(Double.parseDouble(JOptionPane.showInputDialog(null, "Informe o salario: ")));
             
-            int provisorio = Integer.parseInt("\nQuantas turmas tem esse professor?"); 
+            int provisorio = Integer.parseInt(JOptionPane.showInputDialog(null,"Quantas turmas tem esse professor?")); 
             for(int i = 0; i < provisorio; i++){
                 prof.setTurmasDoProf(JOptionPane.showInputDialog(null, "\nInforme a ID da turma " + (i+1) + ": " ));
             }
