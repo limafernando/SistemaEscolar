@@ -141,6 +141,18 @@ public class Aluno extends Pessoa{
         }
 
 	public void notas(){
+	    //Cadastrar notas
+	    int i = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite o código da disciplina:\n"
+	    		+ "1- Ciencias da natureza\n" + "2- Ciencias sociais\n" +
+	    		"3- Matematica\n" + "4- Portugues\n" + "5- Ingles"));
+	    
+	    		
+	    int j = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite qual e o bimestre da nota" +
+	    		"(numero do bimestre ou 5 para final)"));
+	    
+	    double nota = Double.parseDouble(JOptionPane.showInputDialog(null, "Digite a nota:"));
+	    
+	    notas[i][j] = nota;
 
         }
 							
