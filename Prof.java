@@ -20,6 +20,13 @@ public class Prof extends Funcionario{
 			turmasDoProf[i] = "";
 		}
 	}
+	
+	public void setMateriaDoProf(String materiaDoProf){
+		this.materiaDoProf = materiaDoProf;
+	}
+	public String getMateriaDoProf(){
+		return this.materiaDoProf;
+	}
 
 	public void setTurmasDoProf(String turma){
 		turmasDoProf[aux1] = turma;
@@ -30,7 +37,7 @@ public class Prof extends Funcionario{
 	}
 	
 	public String toString(){
-		return super.toString() + "\nTurmas do Professor: " + getTurmasDoProf();
+		return super.toString() + "\nDisciplina que ensina: " + get "\nTurmas do Professor: " + getTurmasDoProf();
 	}
 	
         
