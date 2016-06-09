@@ -121,7 +121,7 @@ public class Turma{
     				verifica=true;
     				for(int i = 0; i < professores.length; i++){
     					for(int k = 0; k < professores[i].turmasDoProf.length; k++){
-    						if(professores[i].getTurmasDoProf(k).equals(turmas[j].getId())){
+    						if(professores[i].getTurmasDoProf2(k).equals(turmas[j].getId())){
     							boolean verifica2 = false;
     							for(int h = 0; h < turmas[j].professores.length; h++){
     								if(professores[i].getNome().equals(turmas[j].professores[h].getNome())){
@@ -183,7 +183,7 @@ public class Turma{
     				}
     				for(int i = 0; i < professores.length; i++){
     					for(int k = 0; k < professores[i].turmasDoProf.length; k++){
-    						if(professores[i].getTurmasDoProf(k).equals(turmas[j].getId())){
+    						if(professores[i].getTurmasDoProf2(k).equals(turmas[j].getId())){
     							professores[i].setTurmasDoProf(mudarT);
     						}
     					}
