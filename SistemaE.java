@@ -80,6 +80,14 @@ public class SistemaE{
                                                     
                                                     matriculaB = "";
                                                     matriculaB = JOptionPane.showInputDialog(null, "Informe a matricula do aluno: ");
+                                                    
+                                                    if(matriculaB == null){
+							break;
+                                                    }
+                                                    else if(matriculaB.isEmpty()){
+                                                        JOptionPane.showMessageDialog(null, "Nenhuma dado informado!");
+                                                        break;
+                                                    }
 
 							aluno = false;
 							//Busca
@@ -102,6 +110,15 @@ public class SistemaE{
                                                         
                                                         matriculaB = "";
 							matriculaB = JOptionPane.showInputDialog(null, "Informe a matricula do aluno: ");
+                                                    
+                                                        if(matriculaB == null){
+                                                            break;
+                                                        }
+                                                        
+                                                        else if(matriculaB.isEmpty()){
+                                                            JOptionPane.showMessageDialog(null, "Nenhuma dado informado!");
+                                                            break;
+                                                        }
 
 							aluno = false;
 							//Busca
@@ -131,6 +148,14 @@ public class SistemaE{
 							                                                        
                                                         matriculaB = "";
 							matriculaB = JOptionPane.showInputDialog(null, "Informe a matricula do aluno: ");
+                                                        
+                                                        if(matriculaB == null){
+                                                            break;
+                                                        }
+                                                        else if(matriculaB.isEmpty()){
+                                                            JOptionPane.showMessageDialog(null, "Nenhuma dado informado!");
+                                                            break;
+                                                        }
 
 							aluno = false;
 							//Busca
@@ -151,6 +176,14 @@ public class SistemaE{
 						case "5": //notas
                                                         matriculaB = "";
 							matriculaB = JOptionPane.showInputDialog(null, "Informe a matricula do aluno: ");
+                                                        
+                                                        if(matriculaB == null){
+                                                            break;
+                                                        }
+                                                        else if(matriculaB.isEmpty()){
+                                                            JOptionPane.showMessageDialog(null, "Nenhuma dado informado!");
+                                                            break;
+                                                        }
 
 							aluno = false;
 							//Busca
@@ -171,6 +204,14 @@ public class SistemaE{
 						case "6": //Gerar um documento de comprovacaoo de matricula
                                                         matriculaB = "";
 							matriculaB = JOptionPane.showInputDialog(null, "Informe a matricula do aluno: ");
+                                                        
+                                                        if(matriculaB == null){
+                                                            break;
+                                                        }
+                                                        else if(matriculaB.isEmpty()){
+                                                            JOptionPane.showMessageDialog(null, "Nenhuma dado informado!");
+                                                            break;
+                                                        }
 
 							aluno = false;
 							//Busca
@@ -217,6 +258,14 @@ public class SistemaE{
                                                     
                                                     matriculaB = "";
                                                     matriculaB = JOptionPane.showInputDialog(null, "Informe a matricula do professor: ");
+                                                    
+                                                    if(matriculaB == null){
+                                                        break;
+                                                    }
+                                                    else if(matriculaB.isEmpty()){
+                                                        JOptionPane.showMessageDialog(null, "Nenhuma dado informado!");
+                                                        break;
+                                                    }
 
 							professor = false;
 							//Busca
@@ -239,6 +288,14 @@ public class SistemaE{
                                                         
                                                         matriculaB = "";
 							matriculaB = JOptionPane.showInputDialog(null, "Informe a matricula do professor: ");
+                                                        
+                                                        if(matriculaB == null){
+                                                            break;
+                                                        }
+                                                        else if(matriculaB.isEmpty()){
+                                                            JOptionPane.showMessageDialog(null, "Nenhuma dado informado!");
+                                                            break;
+                                                        }
 
 							professor = false;
 							//Busca
@@ -269,6 +326,14 @@ public class SistemaE{
 							                                                        
                                                         matriculaB = "";
 							matriculaB = JOptionPane.showInputDialog(null, "Informe a matricula do professor: ");
+                                                        
+                                                        if(matriculaB == null){
+                                                            break;
+                                                        }
+                                                        else if(matriculaB.isEmpty()){
+                                                            JOptionPane.showMessageDialog(null, "Nenhuma dado informado!");
+                                                            break;
+                                                        }
 
 							professor = false;
 							//Busca
@@ -424,6 +489,14 @@ public class SistemaE{
                                                     
                                                     matriculaB = "";
                                                     matriculaB = JOptionPane.showInputDialog(null, "Informe a matricula do funcionario: ");
+                                                    
+                                                    if(matriculaB == null){
+                                                            break;
+                                                        }
+                                                    else if(matriculaB.isEmpty()){
+                                                        JOptionPane.showMessageDialog(null, "Nenhuma dado informado!");
+                                                        break;
+                                                    }
 
 							funcionario = false;
 							//Busca
@@ -446,6 +519,14 @@ public class SistemaE{
                                                         
                                                         matriculaB = "";
 							matriculaB = JOptionPane.showInputDialog(null, "Informe a matricula do funcionario: ");
+                                                        
+                                                        if(matriculaB == null){
+                                                            break;
+                                                        }
+                                                        else if(matriculaB.isEmpty()){
+                                                            JOptionPane.showMessageDialog(null, "Nenhuma dado informado!");
+                                                            break;
+                                                        }
 
 							funcionario = false;
 							//Busca
@@ -476,6 +557,14 @@ public class SistemaE{
 							                                                        
                                                         matriculaB = "";
 							matriculaB = JOptionPane.showInputDialog(null, "Informe a matricula do funcionario: ");
+                                                        
+                                                        if(matriculaB == null){
+                                                            break;
+                                                        }
+                                                        else if(matriculaB.isEmpty()){
+                                                            JOptionPane.showMessageDialog(null, "Nenhuma dado informado!");
+                                                            break;
+                                                        }
 
 							funcionario = false;
 							//Busca
