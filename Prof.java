@@ -3,8 +3,9 @@ package sistemaEscolar;
 import javax.swing.JOptionPane;
 
 public class Prof extends Funcionario{
-
-protected String turmasDoProf[] = new String[10];
+	
+	protected String materiaDoProf;
+	protected String turmasDoProf[] = new String[10];
 	
 	private int aux1 = 0; //varíavel para auxiliar o Set de Turmas
 	private String aux2 = ""; //varíavel para auxiliar o Get de Turmas
@@ -14,6 +15,7 @@ protected String turmasDoProf[] = new String[10];
 	public Prof(){
 		super("Professor");
 		matricula = "";
+		materiaDoProf = "";
 		for(int i = 0; i < turmasDoProf.length; i++){
 			turmasDoProf[i] = "";
 		}
@@ -25,7 +27,11 @@ protected String turmasDoProf[] = new String[10];
 	}
 	public String getTurmasDoProf2(int i){
 		return turmasDoProf[i];
-	}	
+	}
+	
+	public String toString(){
+		return super.toString() + "\nTurmas do Professor: " + getTurmasDoProf();
+	}
 	
         
         public void cadastrarProfessor(Prof prof){
@@ -50,6 +56,8 @@ protected String turmasDoProf[] = new String[10];
             prof.setTipoSanguineo(JOptionPane.showInputDialog(null, "Informe o tipo sanguineo: "));
             
             prof.setSalario(Double.parseDouble(JOptionPane.showInputDialog(null, "Informe o salario: ")));
+            
+            prof.setMateriaDoProf(JOptionPane.showInputDialog(null, "Informe a materia que o professor ensina: ");
             
             int provisorio = Integer.parseInt(JOptionPane.showInputDialog(null,"Quantas turmas tem esse professor?")); 
             for(int i = 0; i < provisorio; i++){
@@ -80,6 +88,8 @@ protected String turmasDoProf[] = new String[10];
             prof.setTipoSanguineo(JOptionPane.showInputDialog(null, "Informe o tipo sanguineo: "));
             
             prof.setSalario(Double.parseDouble(JOptionPane.showInputDialog(null, "Informe o salario: ")));
+            
+            prof.setMateriaDoProf(JOptionPane.showInputDialog(null, "Informe a materia que o professor ensina: ");
             
             int provisorio = Integer.parseInt("\nQuantas turmas tem esse professor?"); 
             for(int i = 0; i < provisorio; i++){
