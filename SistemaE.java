@@ -309,7 +309,7 @@ public class SistemaE{
 
 									professores[i].removerProfessor(professores, i);
 
-									//Contador de alunos vai ser decrementado
+									//Contador de professor vai ser decrementado
                                                                         if(contP != 0){
                                                                             contP--;
                                                                         }
