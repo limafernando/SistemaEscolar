@@ -359,112 +359,39 @@ public class SistemaE{
 					break;
 
 				case "3":
-					System.out.println("\n1 - Cadastrar turma");
-					System.out.println("2 - Registrar alunos na turma"); 
-					System.out.println("3 - Registrar professores na turma"); 
-					System.out.println("4 - Consultar turma"); 
-
-
-					System.out.print("\nInforme a opcao desejada: ");
-					opcao = entrada.next();
-
-					switch (opcao){
-						case "1":
-							entrada.nextLine();
-							System.out.print("\nInforme o nome da turma: ");
-							turmas[contT].setId(entrada.next());
-							contT++;
-							break;
-										
-						case "2":
-							entrada.nextLine();
-							System.out.print("\nInforme o nome da turma: ");
-							buscarT = entrada.nextLine();
-							turma = false;
-							for(int j = 0; j < turmas.length; j++){
-								if(buscarT.equals(turmas[j].getId())){
-									turma=true;
-									for(int i = 0; i < alunos.length; i++){
-										if(alunos[i].getTurmadoAluno().equals(turmas[j].getId())){
-											turmas[j].setAlunos(alunos[i],i);
-										}
-									}
-									for(int i = 1; i < turmas[j].alunos.length;i++){
-										Aluno chave = turmas[j].alunos[i];
-										//System.out.println(chave);
-										if (chave.getNome() == null || chave.getNome().isEmpty()) {
-										    break;
-										}
-				            			int k = i-1;
-										while(k >= 0 && turmas[j].alunos[k].getNome().compareToIgnoreCase(chave.getNome())>0){
-										turmas[j].alunos[k+1] = turmas[j].alunos[k];
-										k--;
-										}
-										turmas[j].alunos[k+1]=chave;
-										}			
-								}
-							}
-							if(!turma){System.out.println("Turma Inexistente");}
-							
-							break;
-						case "3":
-							entrada.nextLine();
-							System.out.print("\nInforme o nome da turma: ");
-							buscarT = entrada.nextLine();
-							turma = false;
-							for(int j = 0; j < turmas.length; j++){
-								if(buscarT.equals(turmas[j].getId())){
-									turma=true;
-									int c = 0;
-									for(int i = 0; i < professores.length; i++){
-										for(int k = 0; k < professores[i].turmasDoProf.length; k++){
-											if(professores[i].getTurmasDoProf2(k).equals(turmas[j].getId())){
-												
-												turmas[j].setProfessores(professores[i], c);
-												c++;
-											}
-												
-											
-										}
-									}
-								}
-							}
-							if(!turma){System.out.println("Turma Inexistente");}
-							break;
-												
-						case "4":
-							entrada.nextLine();
-							System.out.print("\nInforme o nome da turma: ");
-							buscarT = entrada.nextLine();
-							turma = false;
-							for(int j = 0; j < turmas.length; j++){
-								if(buscarT.equals(turmas[j].getId())){
-									turma=true;
-									for(int i = 0; i < turmas[j].professores.length;i++){
-										if (turmas[j].professores[i].getNome() == null || 
-												turmas[j].professores[i].getNome().isEmpty()) {
-										    break;
-										}
-										//if(turmas[j].professores[i].getNome()==""){break;}
-										//System.out.println(turmas[j].professores[i].getNome());}
-										System.out.println(turmas[j].professores[i]);}
+					case "3"://Turma
+					opcao = JOptionPane.showInputDialog(null, "1 - Cadastrar Turma \n2 - Inserir Alunos na turma \n3 - Inserir Professores na turma "
+                            + "\n4 - Consultar  turma	\n5 - Alterar Turma  \n0 - Voltar ao menu anterior \nInforme a opcao desejada: ");
 					
-									for(int i = 0; i < turmas[j].alunos.length;i++){
-										if (turmas[j].alunos[i].getNome() == null || 
-												turmas[j].alunos[i].getNome().isEmpty()) {
-										    break;
-										}
-										//if(turmas[j].alunos[i].getNome()==""){break;}
-										//System.out.printf("%d  %s  %s\n",i+1,turmas[j].alunos[i].getNome(),turmas[j].alunos[i].getMatricula());
-										//System.out.printf("%s\n",turmas[j].alunos[i].getNome());
-										//System.out.println(alunos[i] + turmas[j].alunos[i].getNome() + turmas[j].alunos[i].getMatricula());
-										System.out.println(turmas[j].alunos[i]);
-									}		
-								}
-							}
-							if(!turma){System.out.println("Turma Inexistente");}
+					switch (opcao){
+					case "1":
+						turmas[contT].cadastrarTurma(turmas,contT);
+						contT++;
+						break;
+						
+					case "2":
+						turmas[contT].registrarAlunos(alunos,turmas);
+						break;
+						
+					case "3":
+						turmas[contT].registrarProfessor(professores, turmas);
+						break;
+							
+					case "4":
+						turmas[contT].consultarTurma(turmas);
 							break;
-					}
+					case "5":
+						turmas[contT].alterarTurma(turmas,professores,alunos);
+						break;
+							
+					case "0": // Voltar
+						break;
+						
+					default:
+						JOptionPane.showMessageDialog(null,"Opcao invalida!");
+						break;
+				}		
+		
 				break;
 				
 				
