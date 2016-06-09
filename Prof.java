@@ -33,7 +33,7 @@ public class Prof extends Funcionario{
 	}
 	public String getTurmasDoProf(){
  		for(int i = 0; i < turmasDoProf.length; i++){
- 			aux2 += turmasdoProf[i] + "\n";
+ 			aux2 += turmasDoProf[i] + "\n";
  		}
  		aux2 = turmasDoProf[aux3]; 
  		aux3++;
