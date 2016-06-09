@@ -37,7 +37,7 @@ public class Prof extends Funcionario{
 	}
 	
 	public String toString(){
-		return super.toString() + "\nDisciplina que ensina: " + get "\nTurmas do Professor: " + getTurmasDoProf();
+		return super.toString() + "\nDisciplina que ensina: " + getMateriaDoProf() + "\nTurmas do Professor: " + getTurmasDoProf();
 	}
 	
         
