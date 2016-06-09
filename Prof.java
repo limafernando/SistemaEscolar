@@ -64,7 +64,7 @@ public class Prof extends Funcionario{
             
             prof.setSalario(Double.parseDouble(JOptionPane.showInputDialog(null, "Informe o salario: ")));
             
-            prof.setMateriaDoProf(JOptionPane.showInputDialog(null, "Informe a materia que o professor ensina: ");
+            prof.setMateriaDoProf(JOptionPane.showInputDialog(null, "Informe a materia que o professor ensina: "));
             
             int provisorio = Integer.parseInt(JOptionPane.showInputDialog(null,"Quantas turmas tem esse professor?")); 
             for(int i = 0; i < provisorio; i++){
@@ -96,7 +96,7 @@ public class Prof extends Funcionario{
             
             prof.setSalario(Double.parseDouble(JOptionPane.showInputDialog(null, "Informe o salario: ")));
             
-            prof.setMateriaDoProf(JOptionPane.showInputDialog(null, "Informe a materia que o professor ensina: ");
+            prof.setMateriaDoProf(JOptionPane.showInputDialog(null, "Informe a materia que o professor ensina: "));
             
             int provisorio = Integer.parseInt("\nQuantas turmas tem esse professor?"); 
             for(int i = 0; i < provisorio; i++){
