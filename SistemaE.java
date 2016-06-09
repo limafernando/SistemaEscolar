@@ -358,7 +358,7 @@ public class SistemaE{
 					
 					break;
 
-				case "3":
+				
 					case "3"://Turma
 					opcao = JOptionPane.showInputDialog(null, "1 - Cadastrar Turma \n2 - Inserir Alunos na turma \n3 - Inserir Professores na turma "
                             + "\n4 - Consultar  turma	\n5 - Alterar Turma  \n0 - Voltar ao menu anterior \nInforme a opcao desejada: ");
@@ -384,8 +384,6 @@ public class SistemaE{
 						turmas[contT].alterarTurma(turmas,professores,alunos);
 						break;
 							
-					case "0": // Voltar
-						break;
 						
 					default:
 						JOptionPane.showMessageDialog(null,"Opcao invalida!");
