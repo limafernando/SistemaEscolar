@@ -14,7 +14,6 @@ public class Prof extends Funcionario{
 	// cargo vai ser iniciado como "professor"
 	public Prof(){
 		super("Professor");
-		matricula = "";
 		materiaDoProf = "";
 		for(int i = 0; i < turmasDoProf.length; i++){
 			turmasDoProf[i] = "";
@@ -31,6 +30,14 @@ public class Prof extends Funcionario{
 	public void setTurmasDoProf(String turma){
 		turmasDoProf[aux1] = turma;
 		aux1++;
+	}
+	public String getTurmasDoProf(){
+ 		for(int i = 0; i < turmasDoProf.length; i++){
+ 			aux2 += turmasdoProf[i] + "\n";
+ 		}
+ 		aux2 = turmasDoProf[aux3]; 
+ 		aux3++;
+  		return aux2;
 	}
 	public String getTurmasDoProf2(int i){
 		return turmasDoProf[i];
